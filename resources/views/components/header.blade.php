@@ -134,8 +134,8 @@
                                     class="block px-2 text-[14px] text-[#415464]">Project Management</a></li>
                             <li><a href="/services#installation"
                                     class="block px-2 text-[14px] text-[#415464]">Installation & Maintenance</a></li>
-                            <li><a href="/services#installation"
-                                class="block px-2 text-[14px] text-[#415464]">Cleaning & Maintenance</a></li>
+                            <li><a href="/services#cleaning"
+                                class="block px-2 text-[14px] text-[#415464]">Cleaning & Optimization</a></li>
                         </ul>
                     </div>
                 </li>

@@ -61,7 +61,7 @@
                     <li class="hover:bg-[#2E4354]"><a href="/services#feasibility" class="block px-2 text-[14px] text-[#ffffff]">Feasibility Studies & Site Survey</a></li>
                     <li class="hover:bg-[#2E4354]"><a href="/services#project_management" class="block px-2 text-[14px] text-[#ffffff]">Project Management</a></li>
                     <li class="hover:bg-[#2E4354]"><a href="/services#installation" class="block px-2 text-[14px] text-[#ffffff]">Installation & Maintenance</a></li>
-                    <li class="hover:bg-[#2E4354]"><a href="/services#installation" class="block px-2 text-[14px] text-[#ffffff]">Cleaning & Maintenance</a></li>
+                    <li class="hover:bg-[#2E4354]"><a href="/services#cleaning" class="block px-2 text-[14px] text-[#ffffff]">Cleaning & Optimization</a></li>
                 </ul>
             </li>
             <li class="relative group">

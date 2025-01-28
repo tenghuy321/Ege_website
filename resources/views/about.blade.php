@@ -115,8 +115,8 @@
                             class='w-full md:w-[200px] h-[150px] lg:h-[200px] pt-2 px-1 lg:pl-2 lg:pr-10 bg-[#A4CA62] text-[#415464]'>
                             {{-- <p class='text-[12px] lg:text-[20px]'>Founded in</p>
                             <p class='text-[30px] lg:text-[50px]'>2019</p> --}}
-                            <p class="text-[12px] lg:text-[20px] font-[700]">xx tons </p>
-                            <p class='text-[10px] lg:text-[12px]'>of carbon emissions reduced annually</p>
+                            <p class="text-[12px] lg:text-[20px] font-[700]">Over xx</p>
+                            <p class='text-[10px] lg:text-[12px]'>solar panels installed, providing clean energy to businesses and communities</p>
                         </div>
                         <div data-aos='fade-left' data-aos-duration='1300'
                             class='w-full md:w-[200px] h-[150px] lg:h-[200px] pt-2 pb-20 px-2 lg:pl-2 lg:pr-10 font-[400] text-[10px] lg:text-[15px] text-[#ffffff] bg-[#00AFD7]'>
