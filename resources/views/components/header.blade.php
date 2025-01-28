@@ -135,7 +135,7 @@
                             <li><a href="/services#installation"
                                     class="block px-2 text-[14px] text-[#415464]">Installation & Maintenance</a></li>
                             <li><a href="/services#installation"
-                                class="block px-2 text-[14px] text-[#415464]">Cleaning and Maintenance</a></li>
+                                class="block px-2 text-[14px] text-[#415464]">Cleaning & Maintenance</a></li>
                         </ul>
                     </div>
                 </li>
