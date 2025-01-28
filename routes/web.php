@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\OurHistoryController;
 use App\Http\Controllers\Admin\ManagementController;
+use App\Http\Controllers\Admin\OurProductController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
@@ -43,6 +44,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+
+    // Product
+    // Route::resource('ourproduct', OurProductController::class)->except(['destroy', 'show']);
+    // Route::get('ourproduct/delete/{id}', [OurProductController::class , 'delete'])->name('ourproduct.delete');
 
     // history
     Route::resource('history', OurHistoryController::class)->except(['destroy', 'show']);

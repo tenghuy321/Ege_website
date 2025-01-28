@@ -4,4 +4,6 @@
 @section('content')
     <x-home/>
     <x-scroll-top-button />
+
+    <x-footer />
 @endsection

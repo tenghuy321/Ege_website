@@ -89,6 +89,10 @@
                 class="flex items-center opacity-75 hover:opacity-100 text-[14px] text-[#415464] py-4 pl-6 nav-item {{ Request::is('management') ? 'active-nav-link' : '' }}">
                 Management Team
             </a>
+            {{-- <a href="{{ url('ourproduct') }}"
+                class="flex items-center opacity-75 hover:opacity-100 text-[14px] text-[#415464] py-4 pl-6 nav-item {{ Request::is('ourproduct') ? 'active-nav-link' : '' }}">
+                Our Product
+            </a> --}}
         </nav>
     </aside>
 

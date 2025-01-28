@@ -51,7 +51,7 @@
                     <div class="flex flex-col space-y-2 text-[10px]">
                         <p><span class="font-[600]"> Key Specifications: </span> Wattage, efficiency, compatibility, and lifespan</p>
                         <p><span class="font-[600]">Benefits: </span> Explain how the product solves specific problems, reduces costs, or improves efficiency for households or businesses.</p>
-                        <p><span class="font-[600]">Benefits: </span> Perfect for small agri-businesses looking to cut energy costs by up to 80–100% by replacing diesel-powered pumps.</p>
+                        <p><span class="font-[600]">Use Cases: </span> Perfect for small agri-businesses looking to cut energy costs by up to 80–100% by replacing diesel-powered pumps.</p>
                     </div>
                 </div>
             </div>
