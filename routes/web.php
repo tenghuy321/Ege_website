@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\OurHistoryController;
 use App\Http\Controllers\Admin\ManagementController;
 use App\Http\Controllers\Admin\OurProductController;
+use App\Http\Controllers\Admin\OurProjectController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
@@ -45,9 +46,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 
-    // Product
-    // Route::resource('ourproduct', OurProductController::class)->except(['destroy', 'show']);
-    // Route::get('ourproduct/delete/{id}', [OurProductController::class , 'delete'])->name('ourproduct.delete');
+    // Products
+    Route::resource('ourproduct', OurProductController::class)->except(['destroy', 'show']);
+    Route::get('ourproduct/delete/{id}', [OurProductController::class , 'delete'])->name('ourproduct.delete');
+
+    // Projects
+    Route::resource('project', OurProjectController::class)->except(['destroy', 'show']);
+    Route::get('project/delete/{id}', [OurProjectController::class , 'delete'])->name('project.delete');
 
     // history
     Route::resource('history', OurHistoryController::class)->except(['destroy', 'show']);

@@ -11,10 +11,9 @@ class Product extends Model
 
     protected $fillable = [
         'product_name',
-        // 'key_specifications',
-        // 'benefits',
-        // 'use_cases',
-        'details',
+        'key_specifications',
+        'benefits',
+        'use_cases',
         'image',
     ];
 }
