@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <section class="w-full min-h-screen bg-[#D9ECEE]">
+    <section class="w-full min-h-screen bg-[#D9ECEE] relative">
         <div class="max-w-5xl mx-auto py-10 md:py-20">
             <div class="px-5 2xl:px-0">
                 <h1 class="text-[#A4CA62] text-[20px] sm:text-[25px] md:text-[30px] font-[700]">Request for Quote</h1>
@@ -253,6 +253,14 @@
                 </div>
             </form>
 
+        </div>
+
+        <div class="hidden lg:block absolute top-3 right-2 xl:right-28 px-3">
+            <div class="flex items-center">
+                <a href="{{ route('scheduleConsultation') }}" class="px-4 hover:text-[#A4CA62]">Schedule a Consultation</a>
+                <hr class="h-[25px] w-[3px] bg-[#415464]">
+                <a href="{{ route('getQuote') }}" class="px-4 hover:text-[#A4CA62]">Get Quote</a>
+            </div>
         </div>
     </section>
 

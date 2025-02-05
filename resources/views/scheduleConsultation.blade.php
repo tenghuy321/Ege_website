@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <section class="bg-[#D9ECEE] w-full min-h-screen">
+    <section class="bg-[#D9ECEE] w-full min-h-screen relative">
         <div class="max-w-5xl mx-auto py-10 md:py-20">
             <div class="px-5 2xl:px-0">
                 <h1 class="text-[#A4CA62] text-[20px] sm:text-[25px] md:text-[30px] font-[700]">Schedule a Consultation</h1>
@@ -80,7 +80,7 @@
                 class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-5 px-5 2xl:px-0">
                 @csrf
                 <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700">Name <span
+                    <label for="name" class="text-[14px] font-[600]">Name <span
                             class="text-red-800">*</span></label>
                     <input type="text" id="name" name="name"
                         class="w-full block focus:ring-[#A4CA62] focus:border-[#A4CA62] hover:border-[#A4CA62] p-1 rounded text-[13px]"
@@ -117,7 +117,7 @@
                 </div>
 
                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email <span
+                    <label for="email" class="text-[14px] font-[600]">Email <span
                             class="text-red-800">*</span></label>
                     <input type="email" id="email" name="email"
                         class="w-full block focus:ring-[#A4CA62] focus:border-[#A4CA62] hover:border-[#A4CA62] p-1 rounded text-[13px]"
@@ -155,7 +155,7 @@
                 </div>
 
                 <div>
-                    <label for="phone_number" class="block text-sm font-medium text-gray-700">Phone Number <span
+                    <label for="phone_number" class="text-[14px] font-[600]">Phone Number <span
                             class="text-red-800">*</span></label>
                     <input type="tel" id="phone_number" name="phone_number"
                         class="w-full block focus:ring-[#A4CA62] focus:border-[#A4CA62] hover:border-[#A4CA62] p-1 rounded text-[13px]"
@@ -193,7 +193,7 @@
                 </div>
 
                 <div>
-                    <label for="date" class="block text-sm font-medium text-gray-700">Date <span
+                    <label for="date" class="text-[14px] font-[600]">Date <span
                             class="text-red-800">*</span></label>
                     <input type="date" id="date" name="date"
                         class="w-full block focus:ring-[#A4CA62] focus:border-[#A4CA62] hover:border-[#A4CA62] p-1 rounded text-[13px]"
@@ -231,7 +231,7 @@
                 </div>
 
                 <div class="w-full col-span-1 md:col-span-2">
-                    <label for="messages" class="block text-sm font-medium text-gray-700">Message</label>
+                    <label for="messages" class="text-[14px] font-[600]">Message</label>
                     <textarea id="messages" name="messages" rows="4"
                         class="w-full block focus:ring-[#A4CA62] focus:border-[#A4CA62] hover:border-[#A4CA62] p-1 rounded text-[13px]"
                         placeholder="Messages ...">{{ old('messages') }}</textarea>
@@ -244,6 +244,14 @@
                     </button>
                 </div>
             </form>
+        </div>
+
+        <div class="hidden lg:block absolute top-3 right-2 xl:right-28 px-3">
+            <div class="flex items-center">
+                <a href="{{ route('scheduleConsultation') }}" class="px-4 hover:text-[#A4CA62]">Schedule a Consultation</a>
+                <hr class="h-[25px] w-[3px] bg-[#415464]">
+                <a href="{{ route('getQuote') }}" class="px-4 hover:text-[#A4CA62]">Get Quote</a>
+            </div>
         </div>
     </section>
 
