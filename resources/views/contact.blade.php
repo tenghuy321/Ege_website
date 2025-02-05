@@ -10,7 +10,7 @@
                     <h2 class="text-[18px] text-[#A4CA62] font-[600]">EGE Cambodia Energy Solutions.</h2>
                     <p>Our commitment goes beyond mere products; we actively engage in studying projects, providing expert
                         consultancy, and offering efficient project management solutions.</p>
-                    <img src={Logo} alt="" class="w-32 pt-10" />
+                    <img src={{ asset('assets/images/logo.png') }} alt="" class="w-32 pt-10" />
                     <h1 class="text-[18px] sm:text-[25px] text-[#415464] font-[700] italic leading-none pt-6">Innovation
                         meets <br /> sustainability. </h1>
                 </div>
