@@ -235,7 +235,7 @@
 
                 <div class="col-span-1 md:col-span-2 text-center mt-5">
                     <button type="submit"
-                        class="bg-[#A4CA62] text-white py-2 px-5 text-[14px] tracking-[1px] rounded hover:bg-[#7da23d]">
+                        class="border-2 border-[#A4CA62] text-[#A4CA62] py-2 px-5 text-[14px] tracking-[1px] rounded-[5px] hover:bg-[#A4CA62] hover:text-[#ffffff] font-[500]">
                         Submit
                     </button>
                 </div>
