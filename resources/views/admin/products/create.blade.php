@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6 my-2">
         <div class="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between">
-            <h2 class="text-2xl font-bold">Create Our Products</h2>
+            <h2 class="text-2xl font-bold">Create Our Product</h2>
             <a href="{{ route('ourproduct.index') }}"
                 class="!bg-[#A4CA62] hover:!text-[#415464] px-3 py-1 hover:tracking-wider duration-300 my-3 rounded-md text-[12px] sm:text-[14px] text-[#ffffff]">
                 <span class="">Back</span>
@@ -17,6 +17,7 @@
                     class="mt-1 block w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Your Product Name">
                 <x-input-error class="mt-2" :messages="$errors->get('product_name')" />
             </div>
+
             {{-- key spec --}}
             <div>
                 <label for="key_specifications" class="block text-sm font-medium text-gray-700">Key
@@ -46,7 +47,7 @@
 
                             <!-- Remove Button -->
                             <button type="button" class="text-red-600 hover:text-red-400 mt-2 self-start"
-                                onclick="removeKeySpecificationItem(this)">Remove</button>
+                                onclick="removeKeySpecificationItem(this)">Remove KeySpec Item</button>
                         </div>
                     @endforeach
                 @else
@@ -73,14 +74,14 @@
 
                         <!-- Remove Button -->
                         <button type="button" class="text-red-600 hover:text-red-400 mt-2 self-start"
-                            onclick="removeKeySpecificationItem(this)">Remove</button>
-                    </div>
+                            onclick="removeKeySpecificationItem(this)">Remove KeySpec Item</button>
+                         </div>
                 @endif
 
                 <!-- Button to Add More Items -->
                 <div id="KeySpecification-items-container">
                     <button type="button" class="text-green-600 hover:text-green-400 mt-2"
-                        onclick="addKeySpecificationItem()">Add More</button>
+                        onclick="addKeySpecificationItem()">Add KeySpec Item</button>
                 </div>
             </div>
 
@@ -112,7 +113,7 @@
 
                             <!-- Remove Button -->
                             <button type="button" class="text-red-600 hover:text-red-400 mt-2 self-start"
-                                onclick="removeBenefitsItem(this)">Remove</button>
+                                onclick="removeBenefitsItem(this)">Remove Benefit Item</button>
                         </div>
                     @endforeach
                 @else
@@ -139,14 +140,14 @@
 
                         <!-- Remove Button -->
                         <button type="button" class="text-red-600 hover:text-red-400 mt-2 self-start"
-                            onclick="removeBenefitsItem(this)">Remove</button>
+                            onclick="removeBenefitsItem(this)">Remove Benefit Item</button>
                     </div>
                 @endif
 
                 <!-- Button to Add More Items -->
                 <div id="Benefits-items-container">
                     <button type="button" class="text-green-600 hover:text-green-400 mt-2"
-                        onclick="addBenefitsItem()">Add More</button>
+                        onclick="addBenefitsItem()">Add Benefit Item</button>
                 </div>
             </div>
 
@@ -178,7 +179,7 @@
 
                             <!-- Remove Button -->
                             <button type="button" class="text-red-600 hover:text-red-400 mt-2 self-start"
-                                onclick="removeUseCaseItem(this)">Remove</button>
+                                onclick="removeUseCaseItem(this)">Remove UseCase Item</button>
                         </div>
                     @endforeach
                 @else
@@ -205,14 +206,14 @@
 
                         <!-- Remove Button -->
                         <button type="button" class="text-red-600 hover:text-red-400 mt-2 self-start"
-                            onclick="removeUseCaseItem(this)">Remove</button>
+                            onclick="removeUseCaseItem(this)">Remove UseCase Item</button>
                     </div>
                 @endif
 
                 <!-- Button to Add More Items -->
                 <div id="UseCase-items-container">
                     <button type="button" class="text-green-600 hover:text-green-400 mt-2"
-                        onclick="addUseCaseItem()">Add More</button>
+                        onclick="addUseCaseItem()">Add UseCase Item</button>
                 </div>
             </div>
 
@@ -304,7 +305,7 @@
                               placeholder="KeySpecification Body"
                               required></textarea>
                 </div>
-                <button  type="button" class="text-red-600 hover:text-red-400 mt-2 self-start" onclick="removeKeySpecificationItem(this)">Remove</button>
+                <button  type="button" class="text-red-600 hover:text-red-400 mt-2 self-start" onclick="removeKeySpecificationItem(this)">Remove KeySpec Item</button>
             `;
             container.insertBefore(newItem, container.lastElementChild);
             KeySpecificationItemIndex++;
@@ -331,7 +332,7 @@
                               placeholder="Benefits Body"
                               required></textarea>
                 </div>
-                <button  type="button" class="text-red-600 hover:text-red-400 mt-2 self-start" onclick="removeBenefitsItem(this)">Remove</button>
+                <button  type="button" class="text-red-600 hover:text-red-400 mt-2 self-start" onclick="removeBenefitsItem(this)">Remove Benefit Item</button>
             `;
             container.insertBefore(newItem, container.lastElementChild);
             BenefitsItemIndex++;
@@ -358,7 +359,7 @@
                               placeholder="Use Case Body"
                               required></textarea>
                 </div>
-                <button  type="button" class="text-red-600 hover:text-red-400 mt-2 self-start" onclick="removeUseCaseItem(this)">Remove</button>
+                <button  type="button" class="text-red-600 hover:text-red-400 mt-2 self-start" onclick="removeUseCaseItem(this)">Remove UseCase Item</button>
             `;
             container.insertBefore(newItem, container.lastElementChild);
             UseCaseItemIndex++;

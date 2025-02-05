@@ -158,52 +158,66 @@
             </div>
 
             <!-- Dropdown Nav -->
-            <nav :class="isOpen ? 'flex' : 'hidden'" class="flex flex-col pt-4">
+            <nav :class="isOpen ? 'flex' : 'hidden'" class="flex flex-col space-y-2 pt-4">
                 <a href="{{ route('dashboard') }}"
-                    class="flex items-center text-[14px] text-[#415464] py-2 pl-4 nav-item {{ Route::is('dashboard') ? 'active-nav-link' : '' }}">
+                    class="flex items-center text-[14px] text-[#415464] py-2 pl-4 rounded-md nav-item {{ Route::is('dashboard') ? 'active-nav-link' : '' }}">
                     Dashboard
                 </a>
                 <a href="{{ url('history') }}"
-                    class="flex items-center text-[14px] text-[#415464] py-2 pl-4 nav-item {{ Route::is('history') ? 'active-nav-link' : '' }}">
+                    class="flex items-center text-[14px] text-[#415464] py-2 pl-4 rounded-md nav-item {{ Request::is('history') ? 'active-nav-link' : '' }}">
                     Our History
                 </a>
                 <a href="{{ url('management') }}"
-                    class="flex items-center text-[14px] text-[#415464] py-2 pl-4 nav-item {{ Route::is('management') ? 'active-nav-link' : '' }}">
+                    class="flex items-center text-[14px] text-[#415464] py-2 pl-4 rounded-md nav-item {{ Request::is('management') ? 'active-nav-link' : '' }}">
                     Management Team
                 </a>
                 <a href="{{ url('ourproduct') }}"
-                    class="flex items-center text-[14px] text-[#415464] py-2 pl-4 nav-item {{ Route::is('ourproduct') ? 'active-nav-link' : '' }}">
+                    class="flex items-center text-[14px] text-[#415464] py-2 pl-4 rounded-md nav-item {{ Request::is('ourproduct') ? 'active-nav-link' : '' }}">
                     Our Products
                 </a>
                 <a href="{{ url('project') }}"
-                    class="flex items-center text-[14px] text-[#415464] py-2 pl-4 nav-item {{ Route::is('project') ? 'active-nav-link' : '' }}">
+                    class="flex items-center text-[14px] text-[#415464] py-2 pl-4 rounded-md nav-item {{ Request::is('project') ? 'active-nav-link' : '' }}">
                     Our Projects
                 </a>
-                {{-- <div x-data="{ isOpen: false }" class="relative w-full flex justify-end pt-10">
-                    <button @click="isOpen = !isOpen" class="realtive z-10 flex items-center">
-                        <img src="{{ asset(Auth::user()->image) }}"
-                            class="w-10 h-10 object-cover rounded-full overflow-hidden border-1 border-gray-400 focus:border-gray-300 focus:outline-none">
-                        <div class="ml-3 font-semibold">
-                            <p class="text-gray-200 text-[12px] sm:text-[14px]">Hi, <span
-                                    class="cursor-pointer text-black">
-                                    {{ Auth::user()->name }}</span></p>
-                        </div>
-                    </button>
-                    <button x-show="isOpen" @click="isOpen = false"
-                        class="h-full w-full fixed inset-0 cursor-default">
+                <div x-data="{ isOpen: false }" class="relative flex justify-end">
+                    <!-- Settings Dropdown -->
+                    <div class="">
+                        <x-dropdown align="right" width="48">
+                            <x-slot name="trigger">
+                                <button
+                                    class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-900 hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                    <div>{{ Auth::user()->name }}</div>
 
-                    </button>
-                    <div x-show="isOpen"
-                        class="absolute w-32 bg-white rounded-lg text-[12px] sm:text-[14px] border shadow-lg py-2 mt-12">
-                        <a href="{{ route('profile.edit') }}" class="block px-4 py-2 ">Profile</a>
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <a href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); this.closest('form').submit();"
-                                class="block px-4 py-2 ">Log Out</a>
-                        </form>
+                                    <div class="ms-1">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </x-slot>
+
+                            <x-slot name="content">
+                                <x-dropdown-link :href="route('profile.edit')">
+                                    {{ __('Profile') }}
+                                </x-dropdown-link>
+
+                                <!-- Authentication -->
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+
+                                    <x-dropdown-link :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                        {{ __('Log Out') }}
+                                    </x-dropdown-link>
+                                </form>
+                            </x-slot>
+                        </x-dropdown>
                     </div>
-                </div> --}}
+                </div>
             </nav>
         </header>
 
@@ -229,7 +243,7 @@
                 text: "You won't be able to revert this!",
                 icon: "warning",
                 showCancelButton: true,
-                confirmButtonColor: "#3085d6",
+                confirmButtonColor: "#A4CA62",
                 cancelButtonColor: "#d33",
                 confirmButtonText: "Yes, delete it!"
             }).then((result) => {

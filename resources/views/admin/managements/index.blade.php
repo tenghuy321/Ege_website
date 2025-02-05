@@ -22,7 +22,7 @@
                     @foreach ($managements as $management)
                         <tr>
                             <td class="text-left py-3 px-4 text-[10px] md:text-[12px]">{{ $i++ }}</td>
-                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px]">{{ $management->name }}</td>
+                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px] truncate max-w-[200px]">{{ $management->name }}</td>
                             <td class="text-left py-3 px-4 text-[10px] md:text-[12px] leading-tight">
                                 <div class="line-clamp-2">
                                     {{ $management->description }}

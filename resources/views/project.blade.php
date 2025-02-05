@@ -221,7 +221,7 @@
             <div class='hidden md:grid grid-cols-3 lg:grid-cols-4 gap-4 overflow-hidden'>
                 @foreach ($project_des as $index => $project)
                     <div data-aos='fade-right' data-aos-duration='1200' class="relative">
-                        <img src={{ asset($project->image) }} alt="" class='w-full h-[200px]' />
+                        <img src={{ asset($project->image) }} alt="" class='w-full h-[200px] object-cover' />
                         <hr class='h-2 bg-[#A4CA62] border-none' />
                         <div class='bg-[#415464] text-[#ffffff] p-3 h-[170px] xl:h-[150px]'>
                             <p class="mb-1 leading-none text-[12px] line-clamp-1"><span class="font-[600]">Project:</span>
@@ -252,7 +252,7 @@
                     <div class="swiper-wrapper">
                         @foreach ($project_des as $index => $project)
                             <div class="swiper-slide ">
-                                <img src={{ asset($project->image) }} alt="" class='w-full h-auto' />
+                                <img src={{ asset($project->image) }} alt="" class='w-full h-[200px] object-cover' />
                                 <hr class='h-2 bg-[#A4CA62] border-none' />
                                 <div class='bg-[#415464] relative text-[#ffffff] p-3 h-[150px]'>
                                     <p class="mb-1 leading-none text-[12px] line-clamp-1"><span
@@ -279,8 +279,6 @@
                     </div>
                 </div>
             </div>
-
-
 
             <!-- Overlay -->
             <div id="overlay" class="fixed inset-0 bg-black/50 z-[998] hidden"></div>
@@ -721,14 +719,13 @@
                             <div class="swiper-slide ">
                                 <div class="relative group overflow-hidden">
                                     <hr class='h-2 bg-[#A4CA62] border-none' />
-                                    <img src={{ asset('assets/images/projects/activity/activity-10.png') }} alt=""
-                                        class='w-f relativeull h-[300px] object-cover' />
+                                    <img src={{ asset('assets/images/projects/activity/activity-11.png') }} alt=""
+                                        class='w-full h-[300px] object-cover' />
                                     <div
                                         class='absolute bottom-0 left-0 pt-2 pb-4 px-4 w-full h-[70%] translate-y-full bg-black/80 group-hover:translate-y-0 duration-300 ease-in-out'>
                                         <h1 class="text-[14px] text-[#A4CA62] font-[600]">Some of Technical of Training,
                                             Operation, Maintenance</h1>
-                                        <p class='text-[11px] text-[#ffffff]'>Training community at Preah Vihear Province
-                                            in 2024</p>
+                                        <p class='text-[11px] text-[#ffffff]'>Training community at Preah Vihear Province in 2024</p>
                                     </div>
                                 </div>
                             </div>

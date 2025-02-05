@@ -84,7 +84,7 @@
                         class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]"
                         placeholder="Your Name">
                     @error('name')
-                        <div id="alert-3" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white"" role="alert">
+                        <div id="alert-3" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white" role="alert">
                             <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" version="1.1"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs">

@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="">
-        <div class="my-4 px-4 text-end">
+        <div class="my-3 md:my-4 px-2 md:px-4 text-end">
             <a href="{{ route('ourproduct.create') }}"
                 class="!bg-[#A4CA62] hover:!text-[#415464] px-2 py-2 hover:tracking-wider duration-300 my-3 rounded-md text-[12px] sm:text-[14px] text-[#ffffff]">
                 <span class="">Add new</span>
@@ -33,9 +33,9 @@
                             <td class="text-left py-3 px-4 text-[10px] md:text-[12px]">
                                 <img src={{ asset($product->image) }} alt="" class="w-10">
                             </td>
-                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px]">{{ $product->product_name }}</td>
-                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px]">
-                                <div class="line-clamp-3">
+                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px] truncate max-w-[200px]">{{ $product->product_name }}</td>
+                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px] truncate max-w-[200px]">
+                                <div class="line-clamp-1">
                                     @if (is_array(json_decode($product->key_specifications, true)))
                                         <ul class="">
                                             @foreach (json_decode($product->key_specifications, true) as $key_specifications_item)
@@ -62,8 +62,8 @@
                                     @endif
                                 </div>
                             </td>
-                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px]">
-                                <div class="line-clamp-3">
+                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px] truncate max-w-[200px]">
+                                <div class="line-clamp-1">
                                     @if (is_array(json_decode($product->benefits, true)))
                                         <ul class="">
                                             @foreach (json_decode($product->benefits, true) as $benefits_item)
@@ -90,8 +90,8 @@
                                     @endif
                                 </div>
                             </td>
-                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px]">
-                                <div class="line-clamp-3">
+                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px] truncate max-w-[200px]">
+                                <div class="line-clamp-1">
                                     @if (is_array(json_decode($product->use_cases, true)))
                                         <ul class="">
                                             @foreach (json_decode($product->use_cases, true) as $use_cases_item)
@@ -119,7 +119,7 @@
                                     @endif
                                 </div>
                             </td>
-                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px]">
+                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px] truncate max-w-[200px]">
                                 <div class="flex items-center">
                                     <a href="{{ route('ourproduct.delete', $product->id) }}" title="Delete"
                                         onclick="event.preventDefault(); deleteRecord('{{ route('ourproduct.delete', $product->id) }}')">

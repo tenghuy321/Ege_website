@@ -181,8 +181,8 @@
             </ul>
 
             <div class="p-5 w-80 flex items-center justify-between text-[14px] fixed bottom-2">
-                <a href="{{ route('getQuote') }}" class="hover:text-[#A4CA62]">Get Quote</a>
-                <a href="{{ route('scheduleConsultation') }}" class="hover:text-[#A4CA62]">Schedule a Consultation</a>
+                <a href="{{ route('getQuote') }}" class="px-3 py-2 rounded-[20px] bg-[#A4CA62]">Get Quote</a>
+                <a href="{{ route('scheduleConsultation') }}" class="px-3 py-2 rounded-[20px] bg-[#A4CA62]">Schedule a Consultation</a>
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@
     <style>
         .swiper-products .swiper {
             margin-inline: initial;
-            padding-top: 6rem;
+            padding-top: 4rem;
             padding-bottom: 2rem;
         }
 
@@ -47,108 +47,11 @@
 
                 @foreach ($product_des as $index => $items)
                     <div class="relative group z-[100]" data-aos='fade-up' data-aos-duration='1000'>
-                        <img src="{{ asset($items->image) }}" alt="Product Image" class="w-full h-full" />
+                        <img src="{{ asset($items->image) }}" alt="Product Image" class="w-full aspect-[1/1] object-cover" />
                         <div
-                            class="absolute bottom-[20px] left-1/2 transform w-[95%] h-auto p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#D9ECEE] text-[#415464] text-sm rounded duration-300 ease-in-out">
-                            {{-- <h1 class="font-[700]">{{ $key_specification['title'] }}</h1> --}}
-                            <div class="flex flex-col space-y-2 text-[10px] leading-none">
-                                <p class="font-[600]">Key Specifications: </p>
-                                @foreach (json_decode($items->key_specifications, true) as $key_specifications)
-                                    @if (is_array($key_specifications) &&
-                                            isset($key_specifications['title'], $key_specifications['body']) &&
-                                            !empty($key_specifications['title']) &&
-                                            !empty($key_specifications['body']))
-                                        <ul class="max-w-md list-disc list-inside ml-2">
-                                            <li>
-                                                <span class="font-[600]">{{ $key_specifications['title'] }} :</span>
-                                                {{ $key_specifications['body'] }}
-                                            </li>
-                                        </ul>
-                                    @elseif (isset($key_specifications['body']) && empty($key_specifications['title']))
-                                        <!-- If there is no title, just display the body -->
-                                        <ul class="max-w-md list-disc list-inside ml-2">
-                                            <li>{{ $key_specifications['body'] }}</li>
-                                        </ul>
-                                    @endif
-                                @endforeach
-                                <p class="font-[600]">Benefits: </p>
-                                @foreach (json_decode($items->benefits, true) as $benefits)
-                                    @if (is_array($benefits) &&
-                                            isset($benefits['title'], $benefits['body']) &&
-                                            !empty($benefits['title']) &&
-                                            !empty($benefits['body']))
-                                        <ul class="max-w-md list-disc list-inside ml-2">
-                                            <li>
-                                                <span class="font-[600]">{{ $benefits['title'] }} :</span>
-                                                {{ $benefits['body'] }}
-                                            </li>
-                                        </ul>
-                                    @elseif (isset($benefits['body']) && empty($benefits['title']))
-                                        <!-- If there is no title, just display the body -->
-                                        <ul class="max-w-md list-disc list-inside">
-                                            <li>{{ $benefits['body'] }}</li>
-                                        </ul>
-                                    @endif
-                                @endforeach
-
-                                <p class="font-[600]">Use Case: </p>
-                                @foreach (json_decode($items->use_cases, true) as $use_cases)
-                                    @if (is_array($use_cases) &&
-                                            isset($use_cases['title'], $use_cases['body']) &&
-                                            !empty($use_cases['title']) &&
-                                            !empty($use_cases['body']))
-                                        <ul class="max-w-md list-disc list-inside ml-2">
-                                            <li>
-                                                <span class="font-[600]">{{ $use_cases['title'] }} :</span>
-                                                {{ $use_cases['body'] }}
-                                            </li>
-                                        </ul>
-                                    @elseif (isset($use_cases['body']) && empty($use_cases['title']))
-                                        <!-- If there is no title, just display the body -->
-                                        <ul class="max-w-md list-disc list-inside">
-                                            <li>{{ $use_cases['body'] }}</li>
-                                        </ul>
-                                    @endif
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                    {{-- @foreach (json_decode($items->key_specifications, true) as $key_specification)
-                        @if ($key_specification && isset($key_specification['title']) && isset($key_specification['body']))
-                            <h1 class="font-[700]">{{ $key_specification['title'] }}</h1>
-                        @endif
-                    @endforeach --}}
-                @endforeach
-                {{-- <div class="relative group" data-aos='fade-up' data-aos-duration='1000'>
-                    <img src="{{ asset('assets/images/products/products-1.png') }}" alt="Product Image"
-                        class="w-full h-full" />
-
-                    <div
-                        class="absolute sm:bottom-1/2 xl:bottom-2/3 left-1/2 transform w-[90%] p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#A4CA62] text-[#415464] text-sm rounded duration-300 ease-in-out z-50">
-                        <div class="flex flex-col space-y-2 text-[10px]">
-                            <p><span class="font-[600]"> Key Specifications: </span> Wattage, efficiency, compatibility, and
-                                lifespan</p>
-                            <p><span class="font-[600]">Benefits: </span> Explain how the product solves specific problems,
-                                reduces costs, or improves efficiency for households or businesses.</p>
-                            <p><span class="font-[600]">Use Cases: </span> Perfect for small agri-businesses looking to cut
-                                energy costs by up to 80–100% by replacing diesel-powered pumps.</p>
-                        </div>
-                    </div>
-                </div> --}}
-
-            </div>
-
-            <div class="sm:hidden swiper-products relative">
-                <div class="swiper productsSwiper" style="width: 100%; height: auto; margin: auto;">
-                    <div class="swiper-wrapper">
-
-                    @foreach ($product_des as $index => $items)
-                        <div class="swiper-slide relative group z-[300]">
-                            <img src={{ asset($items->image) }} alt=""
-                                class="w-full h-full object-cover object-center" />
-                            <div
-                                class="absolute bottom-[20px] left-1/2 transform w-[95%] h-auto p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#D9ECEE] text-[#415464] text-sm rounded duration-300 ease-in-out z-50">
-                                <div class="flex flex-col space-y-2 text-[10px] leading-none">
+                            class="absolute bottom-[20px] left-1/2 transform w-[95%] h-[240px] overflow-y-auto p-4 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#D9ECEE] text-[#415464] text-sm rounded duration-300 ease-in-out">
+                            <div class="flex flex-col space-y-2 text-[10px] leading-1">
+                                @if (!empty($items->key_specifications))
                                     <p class="font-[600]">Key Specifications: </p>
                                     @foreach (json_decode($items->key_specifications, true) as $key_specifications)
                                         @if (is_array($key_specifications) &&
@@ -168,6 +71,8 @@
                                             </ul>
                                         @endif
                                     @endforeach
+                                @endif
+                                @if (!empty($items->benefits))
                                     <p class="font-[600]">Benefits: </p>
                                     @foreach (json_decode($items->benefits, true) as $benefits)
                                         @if (is_array($benefits) &&
@@ -182,12 +87,14 @@
                                             </ul>
                                         @elseif (isset($benefits['body']) && empty($benefits['title']))
                                             <!-- If there is no title, just display the body -->
-                                            <ul class="max-w-md list-disc list-inside">
+                                            <ul class="max-w-md list-disc list-inside ml-2">
                                                 <li>{{ $benefits['body'] }}</li>
                                             </ul>
                                         @endif
                                     @endforeach
+                                @endif
 
+                                @if (!empty($items->use_cases))
                                     <p class="font-[600]">Use Case: </p>
                                     @foreach (json_decode($items->use_cases, true) as $use_cases)
                                         @if (is_array($use_cases) &&
@@ -202,136 +109,97 @@
                                             </ul>
                                         @elseif (isset($use_cases['body']) && empty($use_cases['title']))
                                             <!-- If there is no title, just display the body -->
-                                            <ul class="max-w-md list-disc list-inside">
+                                            <ul class="max-w-md list-disc list-inside ml-2">
                                                 <li>{{ $use_cases['body'] }}</li>
                                             </ul>
                                         @endif
                                     @endforeach
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="sm:hidden swiper-products relative">
+                <div class="swiper productsSwiper" style="width: 100%; height: auto; margin: auto;">
+                    <div class="swiper-wrapper">
+
+                    @foreach ($product_des as $index => $items)
+                        <div class="swiper-slide relative group z-[300]">
+                            <img src={{ asset($items->image) }} alt=""
+                                class="w-full aspect-[1/1] object-cover object-center" />
+                            <div
+                                class="absolute bottom-[30%] left-1/2 transform w-[95%] h-[250px] overflow-y-auto p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#D9ECEE] text-[#415464] text-sm rounded duration-300 ease-in-out z-50">
+                                <div class="flex flex-col space-y-2 text-[10px] leading-1">
+                                    @if (!empty($items->key_specifications))
+                                        <p class="font-[600]">Key Specifications: </p>
+                                        @foreach (json_decode($items->key_specifications, true) as $key_specifications)
+                                            @if (is_array($key_specifications) &&
+                                                    isset($key_specifications['title'], $key_specifications['body']) &&
+                                                    !empty($key_specifications['title']) &&
+                                                    !empty($key_specifications['body']))
+                                                <ul class="max-w-md list-disc list-inside ml-2">
+                                                    <li>
+                                                        <span class="font-[600]">{{ $key_specifications['title'] }} :</span>
+                                                        {{ $key_specifications['body'] }}
+                                                    </li>
+                                                </ul>
+                                            @elseif (isset($key_specifications['body']) && empty($key_specifications['title']))
+                                                <!-- If there is no title, just display the body -->
+                                                <ul class="max-w-md list-disc list-inside ml-2">
+                                                    <li>{{ $key_specifications['body'] }}</li>
+                                                </ul>
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                    @if (!empty($items->benefits))
+                                        <p class="font-[600]">Benefits: </p>
+                                        @foreach (json_decode($items->benefits, true) as $benefits)
+                                            @if (is_array($benefits) &&
+                                                    isset($benefits['title'], $benefits['body']) &&
+                                                    !empty($benefits['title']) &&
+                                                    !empty($benefits['body']))
+                                                <ul class="max-w-md list-disc list-inside ml-2">
+                                                    <li>
+                                                        <span class="font-[600]">{{ $benefits['title'] }} :</span>
+                                                        {{ $benefits['body'] }}
+                                                    </li>
+                                                </ul>
+                                            @elseif (isset($benefits['body']) && empty($benefits['title']))
+                                                <!-- If there is no title, just display the body -->
+                                                <ul class="max-w-md list-disc list-inside ml-2">
+                                                    <li>{{ $benefits['body'] }}</li>
+                                                </ul>
+                                            @endif
+                                        @endforeach
+                                    @endif
+
+                                    @if (!empty($items->use_cases))
+                                        <p class="font-[600]">Use Case: </p>
+                                        @foreach (json_decode($items->use_cases, true) as $use_cases)
+                                            @if (is_array($use_cases) &&
+                                                    isset($use_cases['title'], $use_cases['body']) &&
+                                                    !empty($use_cases['title']) &&
+                                                    !empty($use_cases['body']))
+                                                <ul class="max-w-md list-disc list-inside ml-2">
+                                                    <li>
+                                                        <span class="font-[600]">{{ $use_cases['title'] }} :</span>
+                                                        {{ $use_cases['body'] }}
+                                                    </li>
+                                                </ul>
+                                            @elseif (isset($use_cases['body']) && empty($use_cases['title']))
+                                                <!-- If there is no title, just display the body -->
+                                                <ul class="max-w-md list-disc list-inside ml-2">
+                                                    <li>{{ $use_cases['body'] }}</li>
+                                                </ul>
+                                            @endif
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>
                     @endforeach
-
-                        {{-- <div class="swiper-slide relative group">
-                            <img src={{ asset('assets/images/products/products-1.png') }} alt=""
-                                class="w-full h-full object-cover object-center" />
-                            <div
-                                class="absolute bottom-1/3 left-1/2 transform w-[95%] p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#A4CA62] text-[#415464] text-sm rounded duration-300 ease-in-out z-50">
-                                <div class="flex flex-col space-y-2 text-[10px]">
-                                    <p><span class="font-[600]"> Key Specifications: </span> Wattage, efficiency,
-                                        compatibility, and lifespan</p>
-                                    <p><span class="font-[600]">Benefits: </span> Explain how the product solves specific
-                                        problems, reduces costs, or improves efficiency for households or businesses.</p>
-                                    <p><span class="font-[600]">Use Cases: </span> Perfect for small agri-businesses
-                                        looking to cut energy costs by up to 80–100% by replacing diesel-powered pumps.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide group relative">
-                            <img src={{ asset('assets/images/products/products-2.png') }} alt=""
-                                class="w-full h-full object-cover object-center" />
-                            <div
-                                class="absolute bottom-1/3 left-1/2 transform w-[95%] p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#A4CA62] text-[#415464] text-sm rounded duration-300 ease-in-out z-50">
-                                <div class="flex flex-col space-y-2 text-[10px]">
-                                    <p><span class="font-[600]"> Key Specifications: </span> Wattage, efficiency,
-                                        compatibility, and lifespan</p>
-                                    <p><span class="font-[600]">Benefits: </span> Explain how the product solves specific
-                                        problems, reduces costs, or improves efficiency for households or businesses.</p>
-                                    <p><span class="font-[600]">Use Cases: </span> Perfect for small agri-businesses
-                                        looking to cut energy costs by up to 80–100% by replacing diesel-powered pumps.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide group relative">
-                            <img src={{ asset('assets/images/products/products-3.png') }} alt=""
-                                class="w-full h-full object-cover object-center" />
-                            <div
-                                class="absolute bottom-1/3 left-1/2 transform w-[95%] p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#A4CA62] text-[#415464] text-sm rounded duration-300 ease-in-out z-50">
-                                <div class="flex flex-col space-y-2 text-[10px]">
-                                    <p><span class="font-[600]"> Key Specifications: </span> Wattage, efficiency,
-                                        compatibility, and lifespan</p>
-                                    <p><span class="font-[600]">Benefits: </span> Explain how the product solves specific
-                                        problems, reduces costs, or improves efficiency for households or businesses.</p>
-                                    <p><span class="font-[600]">Use Cases: </span> Perfect for small agri-businesses
-                                        looking to cut energy costs by up to 80–100% by replacing diesel-powered pumps.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide group relative">
-                            <img src={{ asset('assets/images/products/products-4.png') }} alt=""
-                                class="w-full h-full object-cover object-center" />
-                            <div
-                                class="absolute bottom-1/3 left-1/2 transform w-[95%] p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#A4CA62] text-[#415464] text-sm rounded duration-300 ease-in-out z-50">
-                                <div class="flex flex-col space-y-2 text-[10px]">
-                                    <p><span class="font-[600]"> Key Specifications: </span> Wattage, efficiency,
-                                        compatibility, and lifespan</p>
-                                    <p><span class="font-[600]">Benefits: </span> Explain how the product solves specific
-                                        problems, reduces costs, or improves efficiency for households or businesses.</p>
-                                    <p><span class="font-[600]">Use Cases: </span> Perfect for small agri-businesses
-                                        looking to cut energy costs by up to 80–100% by replacing diesel-powered pumps.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide group relative">
-                            <img src={{ asset('assets/images/products/products-5.png') }} alt=""
-                                class="w-full h-full object-cover object-center" />
-                            <div
-                                class="absolute bottom-1/3 left-1/2 transform w-[95%] p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#A4CA62] text-[#415464] text-sm rounded duration-300 ease-in-out z-50">
-                                <div class="flex flex-col space-y-2 text-[10px]">
-                                    <p><span class="font-[600]"> Key Specifications: </span> Wattage, efficiency,
-                                        compatibility, and lifespan</p>
-                                    <p><span class="font-[600]">Benefits: </span> Explain how the product solves specific
-                                        problems, reduces costs, or improves efficiency for households or businesses.</p>
-                                    <p><span class="font-[600]">Use Cases: </span> Perfect for small agri-businesses
-                                        looking to cut energy costs by up to 80–100% by replacing diesel-powered pumps.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide group relative">
-                            <img src={{ asset('assets/images/products/products-6.png') }} alt=""
-                                class="w-full h-full object-cover object-center" />
-                            <div
-                                class="absolute bottom-1/3 left-1/2 transform w-[95%] p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#A4CA62] text-[#415464] text-sm rounded duration-300 ease-in-out z-50">
-                                <div class="flex flex-col space-y-2 text-[10px]">
-                                    <p><span class="font-[600]"> Key Specifications: </span> Wattage, efficiency,
-                                        compatibility, and lifespan</p>
-                                    <p><span class="font-[600]">Benefits: </span> Explain how the product solves specific
-                                        problems, reduces costs, or improves efficiency for households or businesses.</p>
-                                    <p><span class="font-[600]">Use Cases: </span> Perfect for small agri-businesses
-                                        looking to cut energy costs by up to 80–100% by replacing diesel-powered pumps.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide group relative">
-                            <img src={{ asset('assets/images/products/products-7.png') }} alt=""
-                                class="w-full h-full object-cover object-center" />
-                            <div
-                                class="absolute bottom-1/3 left-1/2 transform w-[95%] p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#A4CA62] text-[#415464] text-sm rounded duration-300 ease-in-out z-50">
-                                <div class="flex flex-col space-y-2 text-[10px]">
-                                    <p><span class="font-[600]"> Key Specifications: </span> Wattage, efficiency,
-                                        compatibility, and lifespan</p>
-                                    <p><span class="font-[600]">Benefits: </span> Explain how the product solves specific
-                                        problems, reduces costs, or improves efficiency for households or businesses.</p>
-                                    <p><span class="font-[600]">Use Cases: </span> Perfect for small agri-businesses
-                                        looking to cut energy costs by up to 80–100% by replacing diesel-powered pumps.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide group relative">
-                            <img src={{ asset('assets/images/products/products-8.png') }} alt=""
-                                class="w-full h-full object-cover object-center" />
-                            <div
-                                class="absolute bottom-1/3 left-1/2 transform w-[95%] p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#A4CA62] text-[#415464] text-sm rounded duration-300 ease-in-out z-50">
-                                <div class="flex flex-col space-y-2 text-[10px]">
-                                    <p><span class="font-[600]"> Key Specifications: </span> Wattage, efficiency,
-                                        compatibility, and lifespan</p>
-                                    <p><span class="font-[600]">Benefits: </span> Explain how the product solves specific
-                                        problems, reduces costs, or improves efficiency for households or businesses.</p>
-                                    <p><span class="font-[600]">Use Cases: </span> Perfect for small agri-businesses
-                                        looking to cut energy costs by up to 80–100% by replacing diesel-powered pumps.</p>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
 
                     <div class="swiper-pagination"></div>

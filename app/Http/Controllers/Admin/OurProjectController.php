@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class OurProjectController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $projects = Project::paginate(5);
         $projects->getCollection()->transform(function ($item, $index) use ($projects) {

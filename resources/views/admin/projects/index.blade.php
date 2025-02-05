@@ -4,12 +4,13 @@
 @endsection
 @section('content')
     <div class="">
-        <div class="my-4 px-4 text-end">
+        <div class="my-3 md:my-4 px-2 md:px-4 text-end">
             <a href="{{ route('project.create') }}"
                 class="!bg-[#A4CA62] hover:!text-[#415464] px-2 py-2 hover:tracking-wider duration-300 my-3 rounded-md text-[12px] sm:text-[14px] text-[#ffffff]">
                 <span class="">Add new</span>
             </a>
         </div>
+
         @component('admin.components.alert')
         @endcomponent
 
@@ -102,7 +103,9 @@
         </div>
 
         <div class="my-2 px-4">
+            {{-- {{ $projects->links() }} --}}
             {{ $projects->links() }}
+
         </div>
 
     </div>

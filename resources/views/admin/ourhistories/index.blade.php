@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="">
-        <div class="my-4 px-4 text-end">
+        <div class="my-3 md:my-4 px-2 md:px-4 text-end">
             <a href="{{ route('history.create') }}" class="!bg-[#A4CA62] hover:!text-[#415464] px-2 py-2 hover:tracking-wider duration-300 my-3 rounded-md text-[12px] sm:text-[14px] text-[#ffffff]">
                 <span class="">Add new</span>
             </a>
@@ -33,9 +33,13 @@
                                 <img src="{{ asset($ourhistory->image) }}" alt=""
                                     class="w-9 h-9 lg:w-12 lg:h-12 object-cover">
                             </td>
-                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px]">{{ $ourhistory->year }}</td>
-                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px]">{{ $ourhistory->month }}</td>
-                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px] line-clamp-2">{{ $ourhistory->description }}</td>
+                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px] truncate max-w-[200px]">{{ $ourhistory->year }}</td>
+                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px] truncate max-w-[200px]">{{ $ourhistory->month }}</td>
+                            <td class="text-left py-3 px-4 text-[10px] md:text-[12px]">
+                                <div class="line-clamp-1">
+                                    {{ $ourhistory->description }}
+                                </div>
+                            </td>
                             <td class="text-left py-3 px-4">
                              <div class="flex">
                                 <a href="{{ route('history.delete', $ourhistory->id) }}" title="Delete"
