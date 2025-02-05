@@ -10,7 +10,7 @@
                 <hr class="h-px my-4 border-b-2 border-[#A4CA62]">
             </div>
 
-            <div class="px-4">
+            <div class="px-5 md:px-0">
                 @if (Session::has('success'))
                     <div id="alert-1"
                         class="flex items-center p-2 mb-4 bg-gray-50 text-[#52b355] border border-[#52b355] rounded-sm"
