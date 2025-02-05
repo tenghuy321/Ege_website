@@ -82,7 +82,7 @@
                     <label for="name" class="text-[14px] font-[600]">Name <span class="text-red-800">*</span></label>
                     <input type="text" name="name" id="name"
                         class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]"
-                        placeholder="Your Name">
+                        placeholder="Your Name" value={{ old('name') }}>
                     @error('name')
                         <div id="alert-3" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white" role="alert">
                             <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -118,9 +118,9 @@
                             class="text-red-800">*</span></label>
                     <input type="text" name="phone_number" id="phone_number"
                         class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]"
-                        placeholder="012 345 6789">
+                        placeholder="012 345 6789" value={{ old('phone_number') }}>
                     @error('phone_number')
-                        <div id="alert-5" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white"" role="alert">
+                        <div id="alert-5" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white" role="alert">
                             <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" version="1.1"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs">
@@ -153,9 +153,9 @@
                             class="text-red-800">*</span></label>
                     <input type="email" name="email" id="email"
                         class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]"
-                        placeholder="eg: name@example.com">
-                    @error('phone_number')
-                        <div id="alert-6" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white"" role="alert">
+                        placeholder="eg: name@example.com" value={{ old('email') }}>
+                    @error('email')
+                        <div id="alert-6" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white" role="alert">
                             <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" version="1.1"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs">
@@ -191,13 +191,13 @@
                     <select name="service_type"
                         class="border-transparent block focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]">
                         <option value="">Select an option</option>
-                        <option value="Feasibility-Studies-and-Site-Survey">Feasibility Studies & Site Survey</option>
-                        <option value="Project-Management">Project Management</option>
-                        <option value="Installation-and-Maintenance">Installation and Maintenance</option>
-                        <option value="Cleaning-and-Maintenance">Cleaning and Maintenance</option>
+                        <option value="Feasibility-Studies-and-Site-Survey" {{ old('service_type') == 'Feasibility-Studies-and-Site-Survey' ? 'selected' : '' }}>Feasibility Studies & Site Survey</option>
+                        <option value="Project-Management" {{ old('service_type') == 'Project-Management' ? 'selected' : '' }}>Project Management</option>
+                        <option value="Installation-and-Maintenance" {{ old('service_type') == 'Installation-and-Maintenance' ? 'selected' : '' }}>Installation and Maintenance</option>
+                        <option value="Cleaning-and-Maintenance" {{ old('service_type') == 'Cleaning-and-Maintenance' ? 'selected' : '' }}>Cleaning and Maintenance</option>
                     </select>
                     @error('service_type')
-                        <div id="alert-8" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white"" role="alert">
+                        <div id="alert-8" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white" role="alert">
                             <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" version="1.1"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs">
@@ -230,7 +230,7 @@
                     <label for="messages" class="text-[14px] font-[600]">Message</label>
                     <textarea id="messages" name="messages" rows="4"
                         class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]"
-                        placeholder="Message ..."></textarea>
+                        placeholder="Message ...">{{ old('messages') }}</textarea>
                 </div>
 
                 <div class="col-span-1 md:col-span-2 text-center mt-5">

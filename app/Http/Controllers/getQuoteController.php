@@ -16,7 +16,7 @@ class getQuoteController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string',
-            'phone_number' => 'required|string',
+            'phone_number' => 'required|string|regex:/^([0-9\s\-\+\(\)]*)$/|min:8|max:15',
             'email' => 'required|email',
             'service_type' => 'required|string',
             'messages' => 'nullable|string',

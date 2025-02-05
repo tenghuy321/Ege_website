@@ -80,7 +80,7 @@
                     <label for="name" class="block text-sm font-medium text-gray-700">Name <span class="text-red-800">*</span></label>
                     <input type="text" id="name" name="name"
                         class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]"
-                        placeholder="Your Name">
+                        placeholder="Your Name" value={{ old('name') }}>
 
                     @error('name')
                         <div id="alert-11" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white" role="alert">
@@ -116,7 +116,7 @@
                     <label for="email" class="block text-sm font-medium text-gray-700">Email <span class="text-red-800">*</span></label>
                     <input type="email" id="email" name="email"
                         class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]"
-                        placeholder="eg: name@example.com">
+                        placeholder="eg: name@example.com" value={{ old('email') }}>
 
                     @error('email')
                         <div id="alert-12" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white" role="alert">
@@ -152,7 +152,7 @@
                     <label for="phone_number" class="block text-sm font-medium text-gray-700">Phone Number <span class="text-red-800">*</span></label>
                     <input type="tel" id="phone_number" name="phone_number"
                         class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]"
-                        placeholder="012 345 6789">
+                        placeholder="012 345 6789" value={{ old('phone_number') }}>
 
                     @error('phone_number')
                         <div id="alert-13" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white" role="alert">
@@ -187,7 +187,7 @@
                 <div>
                     <label for="date" class="block text-sm font-medium text-gray-700">Date <span class="text-red-800">*</span></label>
                     <input type="date" id="date" name="date"
-                        class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]">
+                        class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]" value={{ old('date') }}>
 
                     @error('date')
                         <div id="alert-14" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white" role="alert">
@@ -223,7 +223,7 @@
                     <label for="messages" class="block text-sm font-medium text-gray-700">Message</label>
                     <textarea id="messages" name="messages" rows="4"
                         class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]"
-                        placeholder="Messages ..."></textarea>
+                        placeholder="Messages ...">{{ old('messages') }}</textarea>
                 </div>
 
                 <div class="md:col-span-2 text-center mt-5">

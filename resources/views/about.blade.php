@@ -113,17 +113,11 @@
                     <div class='flex flex-row space-x-2 items-center justify-end'>
                         <div data-aos='fade-left' data-aos-duration='1000'
                             class='w-full md:w-[200px] h-[150px] lg:h-[200px] pt-2 px-1 lg:pl-2 lg:pr-10 bg-[#A4CA62] text-[#415464]'>
-                            {{-- <p class='text-[12px] lg:text-[20px]'>Founded in</p>
-                            <p class='text-[30px] lg:text-[50px]'>2019</p> --}}
                             <p class="text-[12px] lg:text-[20px] font-[700]">Over 10 MW</p>
                             <p class='text-[10px] lg:text-[12px]'>solar panels installed, providing clean energy to businesses and communities</p>
                         </div>
                         <div data-aos='fade-left' data-aos-duration='1300'
                             class='w-full md:w-[200px] h-[150px] lg:h-[200px] pt-2 pb-20 px-2 lg:pl-2 lg:pr-10 font-[400] text-[10px] lg:text-[15px] text-[#ffffff] bg-[#00AFD7]'>
-                            {{-- <p>our</p>
-                            <p class='text-[12px] lg:text-[20px] font-[700]'>warehouse</p>
-                            <p>can store up to of solar panels</p>
-                            <p class='text-[12px] lg:text-[20px] font-[700]'>1000 kW</p> --}}
                             <p class="text-[12px] lg:text-[20px] font-[700]">98% system</p>
                             <p class='text-[10px] lg:text-[12px]'>uptime for reliable </p>
                             <p class='text-[10px] lg:text-[12px]'>energy solutions</p>

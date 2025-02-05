@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <style>
+        .textStyle{
+            font-size: 16px;
+            font-weight: 700;
+            color: black;
+        }
+    </style>
+</head>
 <body>
     <h2>Quote Request Details</h2>
 
-    <p><strong>Name:</strong> {{ $formData['name'] }}</p>
-    <p><strong>Phone Number:</strong> {{ $formData['phone_number'] }}</p>
-    <p><strong>Email:</strong> {{ $formData['email'] }}</p>
-    <p><strong>Service Type:</strong> {{ $formData['service_type'] }}</p>
-    <p><strong>Message:</strong> {{ $formData['messages'] }}</p>
+    <p><span class="textStyle">Name:</span> {{ $formData['name'] }}</p>
+    <p><span class="textStyle">Phone Number:</span> {{ $formData['phone_number'] }}</p>
+    <p><span class="textStyle">Email:</span> {{ $formData['email'] }}</p>
+    <p><span class="textStyle">Service Type:</span> {{ $formData['service_type'] }}</p>
+    <p><span class="textStyle">Message:</span> {{ $formData['messages'] }}</p>
 
 </body>
 </html>
