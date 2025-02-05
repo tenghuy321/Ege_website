@@ -298,15 +298,15 @@
                             <p class="mb-1 text-[10px] md:text-[12px]"><span class="font-[600]">Project :</span>  {{ $project->project_name }}</p>
 
                             @if (!empty($project->scope_of_work))
-                                <p class="mb-1 text-[10px] md:text-[12px] line-clamp-1"><span class="font-[600]">Scope of
+                                <p class="mb-1 text-[10px] md:text-[12px]"><span class="font-[600]">Scope of
                                         Work:</span> {{ $project->scope_of_work }}</p>
                             @endif
                             @if (!empty($project->location))
-                                <p class="mb-1 text-[10px] md:text-[12px] line-clamp-1"><span class="font-[600]">Location:</span>
+                                <p class="mb-1 text-[10px] md:text-[12px]"><span class="font-[600]">Location:</span>
                                     {{ $project->location }}</p>
                             @endif
                             @if (!empty($project->year))
-                                <p class="mb-1 text-[10px] md:text-[12px] line-clamp-1"><span class="font-[600]">Year:</span>
+                                <p class="mb-1 text-[10px] md:text-[12px]"><span class="font-[600]">Year:</span>
                                     {{ $project->year }}</p>
                             @endif
 

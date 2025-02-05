@@ -55,7 +55,7 @@
                             class="absolute bottom-[20px] left-1/2 transform w-[95%] h-[240px] overflow-y-auto p-4 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#D9ECEE] text-[#415464] text-sm rounded duration-300 ease-in-out">
                             <div class="flex flex-col space-y-2 text-[10px] leading-1">
                                 @if (!empty($items->key_specifications))
-                                    <p class="font-[600]">Key Specifications: </p>
+                                    <p class="text-[11px] font-[600]">Key Specifications: </p>
                                     @foreach (json_decode($items->key_specifications, true) as $key_specifications)
                                         @if (is_array($key_specifications) &&
                                                 isset($key_specifications['title'], $key_specifications['body']) &&
@@ -76,7 +76,7 @@
                                     @endforeach
                                 @endif
                                 @if (!empty($items->benefits))
-                                    <p class="font-[600]">Benefits: </p>
+                                    <p class="text-[11px] font-[600]">Benefits: </p>
                                     @foreach (json_decode($items->benefits, true) as $benefits)
                                         @if (is_array($benefits) &&
                                                 isset($benefits['title'], $benefits['body']) &&
@@ -98,7 +98,7 @@
                                 @endif
 
                                 @if (!empty($items->use_cases))
-                                    <p class="font-[600]">Use Case: </p>
+                                    <p class="text-[11px] font-[600]">Use Case: </p>
                                     @foreach (json_decode($items->use_cases, true) as $use_cases)
                                         @if (is_array($use_cases) &&
                                                 isset($use_cases['title'], $use_cases['body']) &&
