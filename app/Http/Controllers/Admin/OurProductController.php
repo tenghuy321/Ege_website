@@ -96,9 +96,9 @@ class OurProductController extends Controller
         $i = Product::where('id', $id)->update($data);
 
         if ($i) {
-            return redirect()->route('ourproduct.index')->with('success', 'Update successfully.');
+            return redirect()->route('ourproduct.index')->with('success', 'Product has been updated successfully.');
         } else {
-            return redirect()->back()->with('error', 'Data is already existed!');
+            return redirect()->back()->with('error', 'Failed to update Product!');
         }
     }
 

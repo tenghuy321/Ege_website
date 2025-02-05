@@ -87,9 +87,9 @@ class OurProjectController extends Controller
         $i = Project::where('id', $id)->update($data);
 
         if ($i) {
-            return redirect()->route('project.index')->with('success', 'Update successfully.');
+            return redirect()->route('project.index')->with('success', 'Project has been updated successfully.');
         } else {
-            return redirect()->back()->with('error', 'Data is already existed!');
+            return redirect()->back()->with('error', 'Failed to update Project!');
         }
 
     }

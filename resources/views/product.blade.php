@@ -47,7 +47,10 @@
 
                 @foreach ($product_des as $index => $items)
                     <div class="relative group z-[100]" data-aos='fade-up' data-aos-duration='1000'>
-                        <img src="{{ asset($items->image) }}" alt="Product Image" class="w-full aspect-[1/1] object-cover" />
+                        <img src="{{ asset($items->image) }}" alt="Product Image" class="w-full aspect-[4/3] object-cover" />
+                        <div class="flex items-center justify-center bg-[#A4CA62] py-4 text-center text-[20px] font-[600] text-[#4B5D6C] h-[80px]">
+                            {{ $items->product_name }}
+                        </div>
                         <div
                             class="absolute bottom-[20px] left-1/2 transform w-[95%] h-[240px] overflow-y-auto p-4 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#D9ECEE] text-[#415464] text-sm rounded duration-300 ease-in-out">
                             <div class="flex flex-col space-y-2 text-[10px] leading-1">
@@ -128,7 +131,10 @@
                     @foreach ($product_des as $index => $items)
                         <div class="swiper-slide relative group z-[300]">
                             <img src={{ asset($items->image) }} alt=""
-                                class="w-full aspect-[1/1] object-cover object-center" />
+                                class="w-full aspect-[4/3] object-cover object-center" />
+                            <div class="flex items-center justify-center bg-[#A4CA62] py-4 text-center text-[16px] font-[600] text-[#4B5D6C] h-[80px]">
+                                {{ $items->product_name }}
+                            </div>
                             <div
                                 class="absolute bottom-[30%] left-1/2 transform w-[95%] h-[250px] overflow-y-auto p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#D9ECEE] text-[#415464] text-sm rounded duration-300 ease-in-out z-50">
                                 <div class="flex flex-col space-y-2 text-[10px] leading-1">

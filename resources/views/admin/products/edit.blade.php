@@ -1,12 +1,6 @@
 <x-app-layout>
     <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6 my-2">
-        <div class="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between">
-            <h2 class="text-2xl font-bold">Edit Our Product</h2>
-            <a href="{{ route('ourproduct.index') }}"
-                class="!bg-[#A4CA62] hover:!text-[#415464] px-3 py-1 hover:tracking-wider duration-300 my-3 rounded-md text-[12px] sm:text-[14px] text-[#ffffff]">
-                <span class="">Back</span>
-            </a>
-        </div>
+        <h2 class="text-2xl font-bold">Edit Our Product</h2>
         <form action="{{ route('ourproduct.update', $product->id) }}" method="POST" enctype="multipart/form-data" class="space-y-4">
             @csrf
             @method('PATCH')
@@ -15,7 +9,7 @@
             <div>
                 <label for="product_name" class="block text-sm font-medium text-gray-700">Product Name</label>
                 <input value="{{ old('product_name', $product->product_name) }}" type="text" name="product_name" id="product_name"
-                    class="mt-1 block w-full p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500">
+                    class="mt-1 block w-full p-2 border rounded-md focus:ring-green-500 focus:border-green-500 text-green-900 text-sm">
                 <x-input-error class="mt-2" :messages="$errors->get('product_name')" />
             </div>
             {{-- key spec --}}
@@ -80,7 +74,7 @@
 
                 <!-- Button to Add More Items -->
                 <div id="KeySpecification-items-container">
-                    <button type="button" class="text-green-600 hover:text-green-400 mt-2"
+                    <button type="button" class="text-green-600 hover:text-green-400"
                         onclick="addKeySpecificationItem()">Add KeySpec Item</button>
                 </div>
             </div>
@@ -146,7 +140,7 @@
 
                 <!-- Button to Add More Items -->
                 <div id="Benefits-items-container">
-                    <button type="button" class="text-green-600 hover:text-green-400 mt-2"
+                    <button type="button" class="text-green-600 hover:text-green-400"
                         onclick="addBenefitsItem()">Add Benefit Item</button>
                 </div>
             </div>
@@ -212,7 +206,7 @@
 
                 <!-- Button to Add More Items -->
                 <div id="UseCase-items-container">
-                    <button type="button" class="text-green-600 hover:text-green-400 mt-2"
+                    <button type="button" class="text-green-600 hover:text-green-400"
                         onclick="addUseCaseItem()">Add UseCase Item</button>
                 </div>
             </div>
@@ -223,22 +217,27 @@
                     class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50">
                     <div class="flex flex-col items-center justify-center pt-5 pb-6 w-full h-full bg-cover bg-no-repeat rounded-md text-center"
                         id="img-preview" style="background-image: url({{ asset($product->image) }})">
-                        <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                        <svg class="w-8 h-8 mb-4 text-green-900" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                         </svg>
-                        <p class="mb-2 text-[12px] sm:text-[14px] text-blue-500 dark:text-gray-400"><span
+                        <p class="mb-2 text-[12px] sm:text-[14px] text-green-900"><span
                                 class="font-semibold">Click to upload</span> or drag and drop</p>
-                        <p class="text-xs text-blue-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 5MB)</p>
+                        <p class="text-xs text-green-900">SVG, PNG, JPG or GIF (MAX. 5MB)</p>
                     </div>
                     <input id="dropzone-file{{ $product->id }}" type="file" class="hidden" name="image" accept="image/*"
                         onchange="uploadImage(event)" />
                 </label>
                 <x-input-error class="mt-2" :messages="$errors->get('image')" />
             </div>
-            <div>
-                <button type="submit" class="bg-[#A4CA62] text-white px-3 py-1 rounded-md">Submit</button>
+            <div class="flex justify-between">
+                <a href="{{ route('ourproduct.index') }}"
+                    class="border border-[#A4CA62] hover:!bg-[#A4CA62] hover:!text-[#ffffff] px-4 py-1 md:px-6 rounded-[5px] text-[#A4CA62]">
+                    Back
+                </a>
+
+                <button type="submit" class="bg-[#A4CA62] text-white px-4 py-1 md:px-6 rounded-[5px] hover:!text-[#415464]">Submit</button>
             </div>
         </form>
     </div>
@@ -297,7 +296,7 @@
                     <input type="text" name="key_specifications[${KeySpecificationItemIndex}][title]"
                            class="text-green-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 mb-2"
                            placeholder="Key Specification Title"
-                           required>
+                           >
                 </div>
                 <div class="mb-2">
                     <textarea name="key_specifications[${KeySpecificationItemIndex}][body]"
@@ -324,7 +323,7 @@
                     <input type="text" name="benefits[${BenefitsItemIndex}][title]"
                            class="text-green-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 mb-2"
                            placeholder="Benefit Title"
-                           required>
+                           >
                 </div>
                 <div class="mb-2">
                     <textarea name="benefits[${BenefitsItemIndex}][body]"
@@ -350,8 +349,7 @@
                 <div class="mb-2">
                     <input type="text" name="use_cases[${UseCaseItemIndex}][title]"
                            class="text-green-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 mb-2"
-                           placeholder="Use Case Title"
-                           required>
+                           placeholder="Use Case Title">
                 </div>
                 <div class="mb-2">
                     <textarea name="use_cases[${UseCaseItemIndex}][body]"

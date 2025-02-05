@@ -5,7 +5,7 @@
 @section('content')
     <div class="">
         <div class="my-3 md:my-4 px-2 md:px-4 text-end">
-            <a href="{{ route('history.create') }}" class="!bg-[#A4CA62] hover:!text-[#415464] px-2 py-2 hover:tracking-wider duration-300 my-3 rounded-md text-[12px] sm:text-[14px] text-[#ffffff]">
+            <a href="{{ route('history.create') }}" class="hover:!bg-[#A4CA62] hover:!text-[#ffffff] text-[#A4CA62] px-4 py-2 my-3 rounded-[5px] border-2 border-[#A4CA62] text-[12px] sm:text-[14px]">
                 <span class="">Add new</span>
             </a>
         </div>

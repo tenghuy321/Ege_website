@@ -254,7 +254,7 @@
                             <div class="swiper-slide ">
                                 <img src={{ asset($project->image) }} alt="" class='w-full h-[200px] object-cover' />
                                 <hr class='h-2 bg-[#A4CA62] border-none' />
-                                <div class='bg-[#415464] relative text-[#ffffff] p-3 h-[150px]'>
+                                <div class='bg-[#415464] relative text-[#ffffff] p-3 h-[150px] space-y-1'>
                                     <p class="mb-1 leading-none text-[12px] line-clamp-1"><span
                                             class="font-[600]">Project:</span> {{ $project->project_name }}</p>
 
@@ -272,7 +272,7 @@
                                     @endif
 
                                     <button data-target="infoPanel{{ $index + 1 }}"
-                                        class="moreInfoBtn  bg-[#A4CA62] text-[10px] md:text-[12px] text-black px-2 py-[2px]  rounded absolute bottom-2 left-2">Details</button>
+                                        class="moreInfoBtn  bg-[#A4CA62] text-[10px] md:text-[12px] text-black px-3 py-1  rounded absolute bottom-2 left-2">Details</button>
                                 </div>
                             </div>
                         @endforeach
@@ -282,81 +282,82 @@
 
             <!-- Overlay -->
             <div id="overlay" class="fixed inset-0 bg-black/50 z-[998] hidden"></div>
-            @foreach ($project_des as $index => $project)
-                <div id="infoPanel{{ $index + 1 }}"
-                    class="infoPanel fixed top-0 right-[-100%] w-[90%] md:w-[500px] h-full bg-[#A4CA62] text-black p-4 shadow-lg transition-all duration-500 z-[999] overflow-y-auto">
-                    <button
-                        class="closeBtn absolute top-4 right-4 text-black w-4 h-4 md:w-6 md:h-6 rounded-full flex items-center justify-center">
-                        <svg class="w-4 h-4 md:w-6 md:h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                        <span class="sr-only">Close menu</span>
-                    </button>
-                    <div class="pt-8">
-                        <p class="mb-1 text-[10px] md:text-[12px]"><span class="font-[600]">Project :</span>  {{ $project->project_name }}</p>
+                @foreach ($project_des as $index => $project)
+                    <div id="infoPanel{{ $index + 1 }}"
+                        class="infoPanel fixed top-0 right-[-100%] w-[90%] md:w-[500px] h-full bg-[#A4CA62] text-black p-4 shadow-lg transition-all duration-500 z-[999] overflow-y-auto">
+                        <button
+                            class="closeBtn absolute top-4 right-4 text-black w-4 h-4 md:w-6 md:h-6 rounded-full flex items-center justify-center">
+                            <svg class="w-4 h-4 md:w-6 md:h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            <span class="sr-only">Close menu</span>
+                        </button>
+                        <div class="pt-8">
+                            <p class="mb-1 text-[10px] md:text-[12px]"><span class="font-[600]">Project :</span>  {{ $project->project_name }}</p>
 
-                        @if (!empty($project->scope_of_work))
-                            <p class="mb-1 text-[10px] md:text-[12px] line-clamp-1"><span class="font-[600]">Scope of
-                                    Work:</span> {{ $project->scope_of_work }}</p>
-                        @endif
-                        @if (!empty($project->location))
-                            <p class="mb-1 text-[10px] md:text-[12px] line-clamp-1"><span class="font-[600]">Location:</span>
-                                {{ $project->location }}</p>
-                        @endif
-                        @if (!empty($project->year))
-                            <p class="mb-1 text-[10px] md:text-[12px] line-clamp-1"><span class="font-[600]">Year:</span>
-                                {{ $project->year }}</p>
-                        @endif
-
-                        <div class="text-[10px] md:text-[12px]">
-                            @if (!empty($project->overview))
-                                <p class="font-[600] mt-1">Overview</p>
-                                <p class="">{{ $project->overview }}</p>
+                            @if (!empty($project->scope_of_work))
+                                <p class="mb-1 text-[10px] md:text-[12px] line-clamp-1"><span class="font-[600]">Scope of
+                                        Work:</span> {{ $project->scope_of_work }}</p>
                             @endif
-                            @if (!empty($project->challenges))
-                                <p class="font-[600] mt-1">Challenges</p>
-                                <p class="">{{ $project->challenges }}</p>
+                            @if (!empty($project->location))
+                                <p class="mb-1 text-[10px] md:text-[12px] line-clamp-1"><span class="font-[600]">Location:</span>
+                                    {{ $project->location }}</p>
                             @endif
-                            @if (!empty($project->solution))
-                                <p class="font-[600] mt-1">Solution</p>
-                                <p class="">{{ $project->solution }}</p>
+                            @if (!empty($project->year))
+                                <p class="mb-1 text-[10px] md:text-[12px] line-clamp-1"><span class="font-[600]">Year:</span>
+                                    {{ $project->year }}</p>
                             @endif
 
-                            @if (!empty($project->impact))
-                                <p class="font-[600] my-1">Impact</p>
-                                <ol class="max-w-md space-y-1 text-black list-decimal list-inside">
-                                    @foreach (json_decode($project->impact, true) as $impacts)
-                                        @if (is_array($impacts) &&
-                                                isset($impacts['title'], $impacts['body']) &&
-                                                !empty($impacts['title']) &&
-                                                !empty($impacts['body']))
-                                            <li>
-                                                <span class="font-[600]">{{ $impacts['title'] }} :</span>
-                                                <p>{{ $impacts['body'] }}</p>
-                                            </li>
-                                        @elseif (isset($impacts['body']) && empty($impacts['title']))
-                                            <!-- If there is no title, just display the body -->
-                                            <li>{{ $impacts['body'] }}</li>
-                                        @endif
-                                    @endforeach
-                                </ol>
-                            @endif
+                            <div class="text-[10px] md:text-[12px]">
+                                @if (!empty($project->overview))
+                                    <p class="font-[600] mt-1">Overview</p>
+                                    <p class="">{{ $project->overview }}</p>
+                                @endif
+                                @if (!empty($project->challenges))
+                                    <p class="font-[600] mt-1">Challenges</p>
+                                    <p class="">{{ $project->challenges }}</p>
+                                @endif
+                                @if (!empty($project->solution))
+                                    <p class="font-[600] mt-1">Solution</p>
+                                    <p class="">{{ $project->solution }}</p>
+                                @endif
 
-                            @if (!empty($project->conclusion))
-                                <p class="font-[600] mt-1">Conclusion</p>
-                                <p class="">{{ $project->conclusion }}</p>
-                            @endif
+                                @if (!empty($project->impact))
+                                    <p class="font-[600] my-1">Impact</p>
+                                    <ol class="max-w-md space-y-1 text-black list-decimal list-inside">
+                                        @foreach (json_decode($project->impact, true) as $impacts)
+                                            @if (is_array($impacts) &&
+                                                    isset($impacts['title'], $impacts['body']) &&
+                                                    !empty($impacts['title']) &&
+                                                    !empty($impacts['body']))
+                                                <li>
+                                                    <span class="font-[600]">{{ $impacts['title'] }} :</span>
+                                                    <p>{{ $impacts['body'] }}</p>
+                                                </li>
+                                            @elseif (isset($impacts['body']) && empty($impacts['title']))
+                                                <!-- If there is no title, just display the body -->
+                                                <li>{{ $impacts['body'] }}</li>
+                                            @endif
+                                        @endforeach
+                                    </ol>
+                                @endif
 
-                            @if (!empty($project->testimonial))
-                                <p class="font-[600] mt-1">Testimonial</p>
-                                <p class="">{{ $project->testimonial }}</p>
-                            @endif
+                                @if (!empty($project->conclusion))
+                                    <p class="font-[600] mt-1">Conclusion</p>
+                                    <p class="">{{ $project->conclusion }}</p>
+                                @endif
+
+                                @if (!empty($project->testimonial))
+                                    <p class="font-[600] mt-1">Testimonial</p>
+                                    <p class="">{{ $project->testimonial }}</p>
+                                @endif
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
 
