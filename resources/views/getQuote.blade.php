@@ -83,7 +83,7 @@
                 <div class="w-full">
                     <label for="name" class="text-[14px] font-[600]">Name <span class="text-red-800">*</span></label>
                     <input type="text" name="name" id="name"
-                        class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]"
+                        class="w-full block focus:ring-[#A4CA62] focus:border-[#A4CA62] hover:border-[#A4CA62] p-1 rounded text-[13px]"
                         placeholder="Your Name" value={{ old('name') }}>
                     @error('name')
                         <div id="alert-3" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white" role="alert">
@@ -119,7 +119,7 @@
                     <label for="phone_number" class="text-[14px] font-[600]">Phone Number<span
                             class="text-red-800">*</span></label>
                     <input type="text" name="phone_number" id="phone_number"
-                        class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]"
+                        class="w-full block focus:ring-[#A4CA62] focus:border-[#A4CA62] hover:border-[#A4CA62] p-1 rounded text-[13px]"
                         placeholder="012 345 6789" value={{ old('phone_number') }}>
                     @error('phone_number')
                         <div id="alert-5" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white"
@@ -155,7 +155,7 @@
                     <label for="email" class="text-[14px] font-[600]">Email <span
                             class="text-red-800">*</span></label>
                     <input type="email" name="email" id="email"
-                        class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]"
+                        class="w-full block focus:ring-[#A4CA62] focus:border-[#A4CA62] hover:border-[#A4CA62] p-1 rounded text-[13px]"
                         placeholder="eg: name@example.com" value={{ old('email') }}>
                     @error('email')
                         <div id="alert-6" class="flex items-center px-3 py-2 mt-1 mb-4 text-red-800 bg-white"
@@ -193,7 +193,7 @@
                     <label for="service_type" class="text-[14px] font-[600]">Service Type <span
                             class="text-red-800">*</span></label>
                     <select name="service_type"
-                        class="border-transparent block focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]">
+                        class="block focus:ring-[#A4CA62] focus:border-[#A4CA62] hover:border-[#A4CA62] p-1 rounded text-[13px]">
                         <option value="">Select an option</option>
                         <option value="Feasibility-Studies-and-Site-Survey"
                             {{ old('service_type') == 'Feasibility-Studies-and-Site-Survey' ? 'selected' : '' }}>Feasibility
@@ -241,7 +241,7 @@
                 <div class="w-full col-span-1 md:col-span-2">
                     <label for="messages" class="text-[14px] font-[600]">Message</label>
                     <textarea id="messages" name="messages" rows="4"
-                        class="w-full block border-transparent focus:outline-none hover:border-[#A4CA62] p-1 rounded text-[13px]"
+                        class="w-full block focus:ring-[#A4CA62] focus:border-[#A4CA62] hover:border-[#A4CA62] p-1 rounded text-[13px]"
                         placeholder="Message ...">{{ old('messages') }}</textarea>
                 </div>
 
