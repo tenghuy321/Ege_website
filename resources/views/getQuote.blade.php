@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
+    <x-telegram-btn/>
+
     <section class="w-full min-h-screen bg-[#D9ECEE] relative">
         <div class="max-w-5xl mx-auto py-10 md:py-20">
             <div class="px-5 2xl:px-0">

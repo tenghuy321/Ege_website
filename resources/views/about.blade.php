@@ -99,6 +99,8 @@
 @section('content')
     <x-home />
     <x-scroll-top-button />
+    <x-telegram-btn/>
+
 
     <section class='overflow-hidden'>
         <div class='max-w-7xl mx-auto px-4'>

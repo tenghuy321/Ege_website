@@ -23,7 +23,7 @@ class getQuoteController extends Controller
         ]);
 
         // Send email to Gmail
-        Mail::to('tenghuyly2330@gmail.com')->send(new GetQuoteMail($validated));
+        Mail::to('tenghuyly35@gmail.com')->send(new GetQuoteMail($validated));
 
         return back()->with('success', 'Your quote request has been sent!');
     }

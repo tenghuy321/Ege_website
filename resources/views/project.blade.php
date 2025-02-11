@@ -207,7 +207,7 @@
 @section('content')
     <x-home />
     <x-scroll-top-button />
-
+    <x-telegram-btn/>
 
     <div id='project' class='bg-[#D9ECEE]'>
         <hr class='h-4 bg-[#A4CA62] border-none max-w-7xl mx-auto px-4' />
@@ -222,6 +222,7 @@
                 @foreach ($project_des as $index => $project)
                     <div data-aos='fade-right' data-aos-duration='1200' class="relative">
                         <img src={{ asset($project->image) }} alt="" class='w-full h-[200px] object-cover' />
+
                         <hr class='h-2 bg-[#A4CA62] border-none' />
                         <div class='bg-[#415464] text-[#ffffff] p-3 h-[170px] xl:h-[150px]'>
                             <p class="mb-1 leading-none text-[12px] line-clamp-1"><span class="font-[600]">Project:</span>

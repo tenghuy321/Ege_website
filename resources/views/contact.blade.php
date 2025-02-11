@@ -2,6 +2,8 @@
 @section('content')
     <x-home/>
     <x-scroll-top-button />
+    <x-telegram-btn/>
+
     <div class="bg-[#D9ECEE] pt-10 pb-10 md:pb-20">
         <div class="max-w-7xl mx-auto px-4">
             <h1 class="text-[30px] md:text-[50px] text-[#415464] font-[700]">Contact Us</h1>

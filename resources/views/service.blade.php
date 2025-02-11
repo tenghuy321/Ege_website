@@ -12,6 +12,7 @@
 @section('content')
     <x-home/>
     <x-scroll-top-button />
+    <x-telegram-btn/>
 
     <div class="max-w-7xl mx-auto px-4">
         <hr class="h-4 bg-[#A4CA62] border-none" />
@@ -23,10 +24,9 @@
                     <img src="{{ asset('assets/images/services/service-1.png') }}" alt="Service 1"
                         class="w-full h-[200px] lg:h-[300px] object-cover" />
                     <div class="flex flex-col items-start bg-[#415464] py-2 px-2 md:px-6 leading-none">
-                        <h1
-                            class="text-[50px] lg:text-[70px] font-[700] text-[#ffffff] p-0 m-0 leading-none tracking-tight">
-                            01</h1>
-                        <div class="flex flex-col items-start text-[#ffffff] text-[12px]">
+                        <a href="{{ route('getQuote') }}" class="self-end text-[#ffffff] border-2 border-[#A4CA62] hover:bg-[#A4CA62] transition-all duration-300 text-[14px] px-4 rounded-md leading-none tracking-tight py-2">Get Quote</a>
+
+                        <div class="flex flex-col items-start text-[#ffffff] text-[12px] mt-2">
                             <h1 class="text-[14px] md:text-[16px] xl:text-[20px] font-[700] leading-none h-[30px]">
                                 Feasibility Studies & Site Survey
                             </h1>
@@ -51,10 +51,9 @@
                     <img src="{{ asset('assets/images/services/service-2.png') }}" alt="Service 2"
                         class="w-full h-[200px] lg:h-[300px] object-cover" />
                     <div class="flex flex-col items-start bg-[#415464] py-2 px-2 md:px-6 leading-none">
-                        <h1
-                            class="text-[50px] lg:text-[70px] font-[700] text-[#ffffff] p-0 m-0 leading-none tracking-tight">
-                            02</h1>
-                        <div class="flex flex-col items-start text-[#ffffff] text-[12px]">
+                        <a href="{{ route('getQuote') }}" class="self-end text-[#ffffff] border-2 border-[#A4CA62] hover:bg-[#A4CA62] transition-all duration-300 text-[14px] px-4 rounded-md leading-none tracking-tight py-2">Get Quote</a>
+
+                        <div class="flex flex-col items-start text-[#ffffff] text-[12px] mt-2">
                             <h1 class="text-[14px] md:text-[16px] xl:text-[20px] font-[700] leading-none h-[30px]">
                                 Project Management
                             </h1>
@@ -77,10 +76,9 @@
                     <img src="{{ asset('assets/images/services/service-3.png') }}" alt="Service 2"
                         class="w-full h-[200px] lg:h-[300px] object-cover" />
                     <div class="flex flex-col items-start bg-[#415464] py-2 px-2 md:px-6 leading-none">
-                        <h1
-                            class="text-[50px] lg:text-[70px] font-[700] text-[#ffffff] p-0 m-0 leading-none tracking-tight">
-                            03</h1>
-                        <div class="flex flex-col items-start text-[#ffffff] text-[12px]">
+                        <a href="{{ route('getQuote') }}" class="self-end text-[#ffffff] border-2 border-[#A4CA62] hover:bg-[#A4CA62] transition-all duration-300 text-[14px] px-4 rounded-md leading-none tracking-tight py-2">Get Quote</a>
+
+                        <div class="flex flex-col items-start text-[#ffffff] text-[12px] mt-2">
                             <h1 class="text-[14px] md:text-[16px] xl:text-[20px] font-[700] leading-none h-[30px]">
                                 Installation and Maintenance
                             </h1>
@@ -104,9 +102,9 @@
                     <img src="{{ asset('assets/images/services/service-3.png') }}" alt="Service 2"
                         class="w-full h-[200px] lg:h-[300px] object-cover" />
                     <div class="flex flex-col items-start bg-[#415464] py-2 px-2 md:px-6 leading-none">
-                        <h1 class="text-[50px] lg:text-[70px] font-[700] text-[#ffffff] p-0 m-0 leading-none tracking-tight">
-                            04</h1>
-                        <div class="flex flex-col items-start text-[#ffffff] text-[12px]">
+                        <a href="{{ route('getQuote') }}" class="self-end text-[#ffffff] border-2 border-[#A4CA62] hover:bg-[#A4CA62] transition-all duration-300 text-[14px] px-4 rounded-md leading-none tracking-tight py-2">Get Quote</a>
+
+                        <div class="flex flex-col items-start text-[#ffffff] text-[12px] mt-2">
                             <h1 class="text-[14px] md:text-[16px] xl:text-[20px] font-[700] leading-none h-[30px]">
                                 Cleaning and Optimization
                             </h1>

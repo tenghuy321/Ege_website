@@ -33,6 +33,7 @@
 @section('content')
     <x-home />
     <x-scroll-top-button />
+    <x-telegram-btn/>
 
     {{-- products --}}
     <div id="product" class="max-w-7xl mx-auto">

@@ -2,6 +2,8 @@
 @section('content')
     <x-home/>
     <x-scroll-top-button />
+    <x-telegram-btn/>
+
 
     <div class="max-w-7xl mx-auto px-4">
         <hr class="h-4 bg-[#A4CA62] border-none max-w-7xl mx-auto" />

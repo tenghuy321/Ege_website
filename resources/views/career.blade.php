@@ -2,6 +2,8 @@
 @section('content')
     <x-home/>
     <x-scroll-top-button />
+    <x-telegram-btn/>
+
     <div id="career" class="w-full h-[60vh] sm:min-h-screen bg-center bg-cover px-4 relative overflow-hidden"
         style="background-image: url('{{ asset('assets/images/career/career-1.png') }}')">
         <hr class="h-4 bg-[#A4CA62] border-none max-w-7xl mx-auto" />
