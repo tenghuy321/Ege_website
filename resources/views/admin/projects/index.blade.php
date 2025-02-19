@@ -38,7 +38,7 @@
                         <tr class="border-t">
                             <td class="py-3 px-4 text-xs">{{ $project->auto_number  }}</td>
                             <td class="py-3 px-4 text-xs truncate max-w-[200px]">
-                                <img src={{ asset($project->image) }} alt="" class="w-10 h-10">
+                                <img src={{ asset($project->image) }} alt="" class="w-10 h-7">
                             </td>
                             <td class="py-3 px-4 text-xs truncate max-w-[200px]">{{ $project->project_name }}</td>
                             <td class="py-3 px-4 text-xs truncate max-w-[200px]">{{ $project->scope_of_work }}</td>
