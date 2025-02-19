@@ -45,17 +45,16 @@
                     products </p>
             </div>
             <div class="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-5 pb-20">
-
                 @foreach ($product_des as $index => $items)
-                    <div class="relative group z-[100]" data-aos='fade-up' data-aos-duration='1000'>
-                        <img src="{{ asset($items->image) }}" alt="Product Image" class="w-full aspect-[4/3] object-cover" />
+                    <div class="relative {{ $items->key_specifications !== '[{"title":null,"body":null}]' || $items->benefits !== '[{"title":null,"body":null}]' || $items->use_cases !== '[{"title":null,"body":null}]' ? 'group' : '' }} z-[100]" data-aos='fade-up' data-aos-duration='1000'>
+                        <img src="{{ asset($items->image) }}" alt="Product Image" class="w-full aspect-[4/3] object-cover bg-[#fff]" />
                         <div class="flex items-center justify-center bg-[#A4CA62] py-4 text-center text-[20px] font-[600] text-[#4B5D6C] h-[80px]">
                             {{ $items->product_name }}
                         </div>
-                        <div
-                            class="absolute bottom-[20px] left-1/2 transform w-[95%] h-[240px] overflow-y-auto p-4 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#D9ECEE] text-[#415464] text-sm rounded duration-300 ease-in-out">
+
+                        <div class="absolute bottom-[20px] left-1/2 transform w-[95%] h-[240px] overflow-y-auto p-4 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#D9ECEE] text-[#415464] text-sm rounded duration-300 ease-in-out">
                             <div class="flex flex-col space-y-2 text-[10px] leading-1">
-                                @if (!empty($items->key_specifications))
+                                @if ($items->key_specifications !== '[{"title":null,"body":null}]')
                                     <p class="text-[11px] font-[600]">Key Specifications: </p>
                                     @foreach (json_decode($items->key_specifications, true) as $key_specifications)
                                         @if (is_array($key_specifications) &&
@@ -76,7 +75,7 @@
                                         @endif
                                     @endforeach
                                 @endif
-                                @if (!empty($items->benefits))
+                                @if ($items->benefits !== '[{"title":null,"body":null}]')
                                     <p class="text-[11px] font-[600]">Benefits: </p>
                                     @foreach (json_decode($items->benefits, true) as $benefits)
                                         @if (is_array($benefits) &&
@@ -98,7 +97,7 @@
                                     @endforeach
                                 @endif
 
-                                @if (!empty($items->use_cases))
+                                @if ($items->use_cases !== '[{"title":null,"body":null}]')
                                     <p class="text-[11px] font-[600]">Use Case: </p>
                                     @foreach (json_decode($items->use_cases, true) as $use_cases)
                                         @if (is_array($use_cases) &&
@@ -130,16 +129,16 @@
                     <div class="swiper-wrapper">
 
                     @foreach ($product_des as $index => $items)
-                        <div class="swiper-slide relative group z-[300]">
+                        <div class="swiper-slide relative {{ $items->key_specifications !== '[{"title":null,"body":null}]' || $items->benefits !== '[{"title":null,"body":null}]' || $items->use_cases !== '[{"title":null,"body":null}]' ? 'group' : '' }} z-[300]">
                             <img src={{ asset($items->image) }} alt=""
-                                class="w-full aspect-[4/3] object-cover object-center" />
+                                class="w-full aspect-[4/3] object-cover object-center bg-[#fff]" />
                             <div class="flex items-center justify-center bg-[#A4CA62] py-4 text-center text-[16px] font-[600] text-[#4B5D6C] h-[80px]">
                                 {{ $items->product_name }}
                             </div>
-                            <div
-                                class="absolute bottom-[30%] left-1/2 transform w-[95%] h-[250px] overflow-y-auto p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#D9ECEE] text-[#415464] text-sm rounded duration-300 ease-in-out z-50">
+
+                            <div class="absolute bottom-[30%] left-1/2 transform w-[95%] h-[250px] overflow-y-auto p-2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#D9ECEE] text-[#415464] text-sm rounded duration-300 ease-in-out z-50">
                                 <div class="flex flex-col space-y-2 text-[10px] leading-1">
-                                    @if (!empty($items->key_specifications))
+                                    @if ($items->key_specifications !== '[{"title":null,"body":null}]')
                                         <p class="font-[600]">Key Specifications: </p>
                                         @foreach (json_decode($items->key_specifications, true) as $key_specifications)
                                             @if (is_array($key_specifications) &&
@@ -160,7 +159,7 @@
                                             @endif
                                         @endforeach
                                     @endif
-                                    @if (!empty($items->benefits))
+                                    @if ($items->benefits !== '[{"title":null,"body":null}]')
                                         <p class="font-[600]">Benefits: </p>
                                         @foreach (json_decode($items->benefits, true) as $benefits)
                                             @if (is_array($benefits) &&
@@ -182,7 +181,7 @@
                                         @endforeach
                                     @endif
 
-                                    @if (!empty($items->use_cases))
+                                    @if ($items->use_cases !== '[{"title":null,"body":null}]')
                                         <p class="font-[600]">Use Case: </p>
                                         @foreach (json_decode($items->use_cases, true) as $use_cases)
                                             @if (is_array($use_cases) &&

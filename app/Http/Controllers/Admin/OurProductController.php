@@ -22,14 +22,8 @@ class OurProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:5120',
+            'image' => 'required|image|max:5120',
             'product_name' => 'required',
-            // 'key_specifications' => 'required|array',
-            'key_specifications.*.body' => 'required|string',
-            // 'benefits' => 'required|array',
-            'benefits.*.body' => 'required|string',
-            // 'use_cases' => 'required|array',
-            'use_cases.*.body' => 'required|string',
         ]);
 
         $data = $request->except('_token');
@@ -65,12 +59,6 @@ class OurProductController extends Controller
     {
         $request->validate([
             'product_name' => 'required',
-            // 'key_specifications' => 'required|array',
-            'key_specifications.*.body' => 'required|string',
-            // 'benefits' => 'required|array',
-            'benefits.*.body' => 'required|string',
-            // 'use_cases' => 'required|array',
-            'use_cases.*.body' => 'required|string',
         ]);
 
         $product = Product::findOrFail($id);
