@@ -208,8 +208,8 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Whoops\\' => 
         array (
@@ -594,6 +594,11 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
 
     public static $classMap = array (
         'App\\Http\\Controllers\\AboutController' => __DIR__ . '/../..' . '/app/Http/Controllers/AboutController.php',
+        'App\\Http\\Controllers\\Admin\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminController.php',
+        'App\\Http\\Controllers\\Admin\\ManagementController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ManagementController.php',
+        'App\\Http\\Controllers\\Admin\\OurHistoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/OurHistoryController.php',
+        'App\\Http\\Controllers\\Admin\\OurProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/OurProductController.php',
+        'App\\Http\\Controllers\\Admin\\OurProjectController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/OurProjectController.php',
         'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmablePasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmablePasswordController.php',
         'App\\Http\\Controllers\\Auth\\EmailVerificationNotificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/EmailVerificationNotificationController.php',
@@ -611,11 +616,17 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
         'App\\Http\\Controllers\\ProjectController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProjectController.php',
+        'App\\Http\\Controllers\\ScheduleConsultationController' => __DIR__ . '/../..' . '/app/Http/Controllers/ScheduleConsultationController.php',
         'App\\Http\\Controllers\\ServiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/ServiceController.php',
         'App\\Http\\Controllers\\getQuoteController' => __DIR__ . '/../..' . '/app/Http/Controllers/getQuoteController.php',
         'App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Auth/LoginRequest.php',
         'App\\Http\\Requests\\ProfileUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileUpdateRequest.php',
         'App\\Mail\\GetQuoteMail' => __DIR__ . '/../..' . '/app/Mail/GetQuoteMail.php',
+        'App\\Mail\\ScheduleConsultation' => __DIR__ . '/../..' . '/app/Mail/ScheduleConsultation.php',
+        'App\\Models\\Management' => __DIR__ . '/../..' . '/app/Models/Management.php',
+        'App\\Models\\OurHistory' => __DIR__ . '/../..' . '/app/Models/OurHistory.php',
+        'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
+        'App\\Models\\Project' => __DIR__ . '/../..' . '/app/Models/Project.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\View\\Components\\AppLayout' => __DIR__ . '/../..' . '/app/View/Components/AppLayout.php',
@@ -7292,9 +7303,7 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         'Termwind\\ValueObjects\\Node' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Node.php',
         'Termwind\\ValueObjects\\Style' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Style.php',
         'Termwind\\ValueObjects\\Styles' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Styles.php',
-        'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
-        'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
         'TheSeer\\Tokenizer\\NamespaceUri' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUri.php',
         'TheSeer\\Tokenizer\\NamespaceUriException' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUriException.php',
