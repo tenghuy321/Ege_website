@@ -31,7 +31,7 @@
                         <tr>
                             <td class="text-left py-3 px-4 text-[10px] md:text-[12px]">{{ $index + 1 }}</td>
                             <td class="text-left py-3 px-4 text-[10px] md:text-[12px]">
-                                <img src={{ asset($product->image) }} alt="" class="w-10">
+                                <img src={{ asset($product->image) }} alt="" class="w-10 h-10">
                             </td>
                             <td class="text-left py-3 px-4 text-[10px] md:text-[12px] truncate max-w-[200px]">{{ $product->product_name }}</td>
                             <td class="text-left py-3 px-4 text-[10px] md:text-[12px] truncate max-w-[200px]">
