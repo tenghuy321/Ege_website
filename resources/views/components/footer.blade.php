@@ -6,7 +6,7 @@
           <img src={{ asset('assets/images/logo.png') }} alt="" class='w-32 sm:w-full sm:h-full' />
         </div>
         <div class='sm:col-span-6 md:col-span-4 lg:col-span-3 text-[13px] text-[#415464]'>
-          <h1 class='text-[#A4CA62] text-[18px] font-[700] leading-none'>EGE Cambodia Energy Solutions.</h1>
+          <h1 class='text-[#A4CA62] text-[18px] font-[700] leading-none'>EGE (Cambodia) Energy Solutions Co., Ltd</h1>
           <p>Our commitment goes beyond mere products; we actively engage in studying
             projects, providing expert consultancy, and offering efficient project management solutions.</p>
           <h2 class='text-[25px] font-[700] italic leading-none pt-6'>Innovation meets <br />
