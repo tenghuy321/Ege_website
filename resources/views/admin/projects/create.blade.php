@@ -198,27 +198,27 @@
         });
 
 
-        let ImpactItemIndex = {{ count(old('impact', json_decode($project->impact ?? '[]'))) ?? 0 }};
+        let ImpactItemIndex = {{ count(old('impact', json_decode($project->impact ?? '[]', true))) ?? 0 }};
 
         function addImpactItem() {
             const container = document.getElementById('Impact-items-container');
             const newItem = document.createElement('div');
             newItem.classList.add('flex', 'flex-col', 'mb-4', 'impact-item');
             newItem.innerHTML = `
-                <div class="mb-2">
-                    <input type="text" name="impact[${ImpactItemIndex}][title]"
-                           class="text-green-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 mb-2"
-                           placeholder="Impact Title"
-                           required>
-                </div>
-                <div class="mb-2">
-                    <textarea name="impact[${ImpactItemIndex}][body]"
-                              class="text-green-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                              placeholder="Impact Body"
-                              required></textarea>
-                </div>
-                <button  type="button" class="text-red-600 hover:text-red-400 mt-2 self-start" onclick="removeImpactItem(this)">Remove</button>
-            `;
+                    <div class="mb-2">
+                        <input type="text" name="impact[${ImpactItemIndex}][title]"
+                            class="text-green-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 mb-2"
+                            placeholder="Impact Title"
+                            required>
+                    </div>
+                    <div class="mb-2">
+                        <textarea name="impact[${ImpactItemIndex}][body]"
+                                class="text-green-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
+                                placeholder="Impact Body"
+                                required></textarea>
+                    </div>
+                    <button  type="button" class="text-red-600 hover:text-red-400 mt-2 self-start" onclick="removeImpactItem(this)">Remove</button>
+                `;
             container.insertBefore(newItem, container.lastElementChild);
             ImpactItemIndex++;
         }
@@ -226,6 +226,5 @@
         function removeImpactItem(button) {
             button.parentElement.remove();
         }
-
     </script>
 </x-app-layout>
