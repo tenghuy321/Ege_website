@@ -207,7 +207,7 @@
 @section('content')
     <x-home />
     <x-scroll-top-button />
-    <x-telegram-btn/>
+    <x-telegram-btn />
 
     <div id='project' class='bg-[#D9ECEE]'>
         <hr class='h-4 bg-[#A4CA62] border-none max-w-7xl mx-auto px-4' />
@@ -239,9 +239,20 @@
                                 <p class="mb-1 leading-none text-[12px] line-clamp-1"><span class="font-[600]">Year:</span>
                                     {{ $project->year }}</p>
                             @endif
-
                             <button data-target="infoPanel{{ $index + 1 }}"
-                                class="moreInfoBtn  bg-[#A4CA62] text-[10px] md:text-[12px] text-black px-2 py-[2px]  rounded absolute bottom-2 left-2">Details</button>
+                                class='moreInfoBtn @if (
+                                    empty($project->overview) &&
+                                    empty($project->challenges) &&
+                                    empty($project->solution) &&
+                                    empty($project->conclusion) &&
+                                    empty($project->testimonial) &&
+                                    (!isset($project->impact) || empty(array_filter(json_decode($project->impact, true), function ($item) {
+                                        return is_array($item) && (!empty($item['title']) || !empty($item['body']));
+                                    })))
+                                ) hidden @endif
+                                bg-[#A4CA62] text-[10px] md:text-[12px] text-black px-2 py-[2px] rounded absolute bottom-2 left-2'>
+                                Details
+                            </button>
                         </div>
                     </div>
                 @endforeach
@@ -253,7 +264,8 @@
                     <div class="swiper-wrapper">
                         @foreach ($project_des as $index => $project)
                             <div class="swiper-slide ">
-                                <img src={{ asset($project->image) }} alt="" class='w-full h-[200px] object-cover' />
+                                <img src={{ asset($project->image) }} alt=""
+                                    class='w-full h-[200px] object-cover' />
                                 <hr class='h-2 bg-[#A4CA62] border-none' />
                                 <div class='bg-[#415464] relative text-[#ffffff] p-3 h-[150px] space-y-1'>
                                     <p class="mb-1 leading-none text-[12px] line-clamp-1"><span
@@ -273,7 +285,20 @@
                                     @endif
 
                                     <button data-target="infoPanel{{ $index + 1 }}"
-                                        class="moreInfoBtn  bg-[#A4CA62] text-[10px] md:text-[12px] text-black px-3 py-1  rounded absolute bottom-2 left-2">Details</button>
+                                        class='moreInfoBtn @if (
+                                            empty($project->overview) &&
+                                            empty($project->challenges) &&
+                                            empty($project->solution) &&
+                                            empty($project->conclusion) &&
+                                            empty($project->testimonial) &&
+                                            (!isset($project->impact) || empty(array_filter(json_decode($project->impact, true), function ($item) {
+                                                return is_array($item) && (!empty($item['title']) || !empty($item['body']));
+                                            })))
+                                        ) hidden @endif
+                                        bg-[#A4CA62] text-[10px] md:text-[12px] text-black px-3 py-1 rounded absolute bottom-2 left-2'>
+                                        Details
+                                    </button>
+
                                 </div>
                             </div>
                         @endforeach
@@ -296,7 +321,8 @@
                             <span class="sr-only">Close menu</span>
                         </button>
                         <div class="pt-8">
-                            <p class="mb-1 text-[10px] md:text-[12px]"><span class="font-[600]">Project :</span>  {{ $project->project_name }}</p>
+                            <p class="mb-1 text-[10px] md:text-[12px]"><span class="font-[600]">Project :</span>
+                                {{ $project->project_name }}</p>
 
                             @if (!empty($project->scope_of_work))
                                 <p class="mb-1 text-[10px] md:text-[12px]"><span class="font-[600]">Scope of
@@ -326,7 +352,7 @@
                                 @endif
 
                                 @if (!empty($project->impact))
-                                    <p class="font-[600] my-1">Impact</p>
+                                    <p class="font-[600] my-1 @if (!empty($project->impact)) hidden @endif">Impact</p>
                                     <ol class="max-w-md space-y-1 text-black list-decimal list-inside">
                                         @foreach (json_decode($project->impact, true) as $impacts)
                                             @if (is_array($impacts) &&
@@ -727,7 +753,8 @@
                                         class='absolute bottom-0 left-0 pt-2 pb-4 px-4 w-full h-[70%] translate-y-full bg-black/80 group-hover:translate-y-0 duration-300 ease-in-out'>
                                         <h1 class="text-[14px] text-[#A4CA62] font-[600]">Some of Technical of Training,
                                             Operation, Maintenance</h1>
-                                        <p class='text-[11px] text-[#ffffff]'>Training community at Preah Vihear Province in 2024</p>
+                                        <p class='text-[11px] text-[#ffffff]'>Training community at Preah Vihear Province
+                                            in 2024</p>
                                     </div>
                                 </div>
                             </div>
@@ -962,26 +989,26 @@
                     const targetPanelId = btn.getAttribute('data-target');
                     const targetPanel = document.getElementById(targetPanelId);
 
-                    targetPanel.style.right = '0';
-                    overlay.classList.remove('hidden');
-                    body.classList.add('overflow-hidden');
+                    if (targetPanel) {
+                        targetPanel.style.right = '0';
+                        overlay?.classList.remove('hidden');
+                        body.classList.add('overflow-hidden');
+                    } else {
+                        console.error(`Panel with ID ${targetPanelId} not found`);
+                    }
                 });
             });
 
             const closePanel = () => {
-                const openPanels = document.querySelectorAll('.infoPanel');
-                openPanels.forEach(panel => {
+                document.querySelectorAll('.infoPanel').forEach(panel => {
                     panel.style.right = '-100%';
                 });
-                overlay.classList.add('hidden');
+                overlay?.classList.add('hidden');
                 body.classList.remove('overflow-hidden');
             };
 
-            closeBtns.forEach(btn => {
-                btn.addEventListener('click', closePanel);
-            });
-
-            overlay.addEventListener('click', closePanel);
+            closeBtns.forEach(btn => btn.addEventListener('click', closePanel));
+            overlay?.addEventListener('click', closePanel);
         });
     </script>
 @endsection
