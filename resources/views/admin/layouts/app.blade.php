@@ -97,6 +97,10 @@
                 class="flex items-center opacity-75 hover:opacity-100 text-[14px] text-[#415464] py-4 pl-6 nav-item {{ Request::is('project') ? 'active-nav-link' : '' }}">
                 Our Project
             </a>
+            <a href="{{ url('license') }}"
+                class="flex items-center opacity-75 hover:opacity-100 text-[14px] text-[#415464] py-4 pl-6 nav-item {{ Request::is('license') ? 'active-nav-link' : '' }}">
+                License
+            </a>
         </nav>
     </aside>
 

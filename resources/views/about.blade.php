@@ -99,7 +99,7 @@
 @section('content')
     <x-home />
     <x-scroll-top-button />
-    <x-telegram-btn/>
+    <x-telegram-btn />
 
 
     <section class='overflow-hidden'>
@@ -116,7 +116,8 @@
                         <div data-aos='fade-left' data-aos-duration='1000'
                             class='w-full md:w-[200px] h-[150px] lg:h-[200px] pt-2 px-1 lg:pl-2 lg:pr-10 bg-[#A4CA62] text-[#415464]'>
                             <p class="text-[12px] lg:text-[20px] font-[700]">Over 10 MW</p>
-                            <p class='text-[10px] lg:text-[12px]'>solar panels installed, providing clean energy to businesses and communities</p>
+                            <p class='text-[10px] lg:text-[12px]'>solar panels installed, providing clean energy to
+                                businesses and communities</p>
                         </div>
                         <div data-aos='fade-left' data-aos-duration='1300'
                             class='w-full md:w-[200px] h-[150px] lg:h-[200px] pt-2 pb-20 px-2 lg:pl-2 lg:pr-10 font-[400] text-[10px] lg:text-[15px] text-[#ffffff] bg-[#00AFD7]'>
@@ -243,7 +244,7 @@
                 <div class="hidden md:col-span-2 md:flex flex-col space-y-4 md:space-y-7 overflow-hidden">
                     @foreach ($ourhistories as $index => $history)
                         <div class="relative overflow-hidden group transition-all duration-500"
-                        style="color:
+                            style="color:
                             @if ($index === 0) #f5f5f5
                             @elseif($index === 1) #e5e5e5
                             @elseif($index === 2) #d4d4d4
@@ -253,10 +254,10 @@
                             @elseif($index === 6) #939393
                             @elseif($index === 7) #828282
                             @elseif($index === 8) #737373
-                            @elseif($index === 9) #626262
-                            @endif;">
+                            @elseif($index === 9) #626262 @endif;">
 
-                            <div data-aos="fade-left" data-aos-duration="1000" class="flex flex-col md:flex-row md:space-x-4 items-center px-4">
+                            <div data-aos="fade-left" data-aos-duration="1000"
+                                class="flex flex-col md:flex-row md:space-x-4 items-center px-4">
                                 <!-- Image -->
                                 <img src="{{ asset($history->image) }}" alt="{{ $history->year }}" class="w-20" />
 
@@ -280,7 +281,7 @@
 
 
 
-                    {{-- <div
+                {{-- <div
                         class='relative transition-all duration-500 overflow-hidden'>
                         <div data-aos='fade-left' data-aos-duration='1000'
                             class='flex flex-col md:flex-row md:space-x-4 items-center px-4'>
@@ -359,16 +360,16 @@
                             </div>
                         </div>
                     </div> --}}
-                </div>
+            </div>
 
-                {{-- history mobile --}}
-                <div class='md:hidden swiper-history'>
-                    <!-- Swiper -->
-                    <div class="swiper historySwiper">
-                        <div class="swiper-wrapper">
-                            @foreach ($ourhistories as $index => $history)
-                                <div class="swiper-slide"
-                                    style="color:
+            {{-- history mobile --}}
+            <div class='md:hidden swiper-history'>
+                <!-- Swiper -->
+                <div class="swiper historySwiper">
+                    <div class="swiper-wrapper">
+                        @foreach ($ourhistories as $index => $history)
+                            <div class="swiper-slide"
+                                style="color:
                                         @if ($index === 0) #f5f5f5
                                         @elseif($index === 1) #e5e5e5
                                         @elseif($index === 2) #d4d4d4
@@ -378,29 +379,28 @@
                                         @elseif($index === 6) #939393
                                         @elseif($index === 7) #828282
                                         @elseif($index === 8) #737373
-                                        @elseif($index === 9) #626262
-                                        @endif;">
-                                    <div class='flex flex-col items-center px-4'>
-                                        <img src={{ asset($history->image) }} alt="" class='w-20 h-[85px]' />
-                                        <div class='w-full'>
-                                            <div class='flex items-center justify-between'>
-                                                <h1 class='text-[20px] xl:text-[30px] font-bold '>
-                                                    {{ $history->year }}
-                                                </h1>
-                                                <h1 class='text-[20px] xl:text-[30px] font-bold '>
-                                                    {{ $history->month }}
-                                                </h1>
-                                            </div>
-                                            <hr class='h-1 my-2 bg-[#A4CA62] border-none' />
-                                            <p class='text-[12px] lg:text-[14px] h-[80px]'>
-                                                {{ $history->description }}
-                                            </p>
+                                        @elseif($index === 9) #626262 @endif;">
+                                <div class='flex flex-col items-center px-4'>
+                                    <img src={{ asset($history->image) }} alt="" class='w-20 h-[85px]' />
+                                    <div class='w-full'>
+                                        <div class='flex items-center justify-between'>
+                                            <h1 class='text-[20px] xl:text-[30px] font-bold '>
+                                                {{ $history->year }}
+                                            </h1>
+                                            <h1 class='text-[20px] xl:text-[30px] font-bold '>
+                                                {{ $history->month }}
+                                            </h1>
                                         </div>
+                                        <hr class='h-1 my-2 bg-[#A4CA62] border-none' />
+                                        <p class='text-[12px] lg:text-[14px] h-[80px]'>
+                                            {{ $history->description }}
+                                        </p>
                                     </div>
                                 </div>
-                            @endforeach
+                            </div>
+                        @endforeach
 
-                            {{-- <div class="swiper-slide">
+                        {{-- <div class="swiper-slide">
                                 <div class='flex flex-col items-center px-4'>
                                     <img src={{ asset('assets/images/about/icon-1.png') }} alt=""
                                         class='w-20 h-[85px]' />
@@ -516,13 +516,13 @@
                             </div> --}}
 
 
-                        </div>
-                        <div class="swiper-button-next"><i class="fa-solid fa-arrow-right"></i></div>
-                        <div class="swiper-button-prev"><i class="fa-solid fa-arrow-left"></i></div>
-                        <div class="swiper-pagination"></div>
                     </div>
+                    <div class="swiper-button-next"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="swiper-button-prev"><i class="fa-solid fa-arrow-left"></i></div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
+        </div>
         </div>
 
         {{-- management team --}}
@@ -685,38 +685,26 @@
 
         {{-- certificate --}}
         <div id='registration_docs'
-            class='hidden md:grid grid-cols-4 gap-6 px-4 items-center max-w-7xl mx-auto my-20 overflow-hidden'>
-            <div data-aos='fade-right' data-aos-duration='1000' class='md:col-span-2'>
-                <img src={{ asset('assets/images/about/certificate-1.png') }} alt="" />
-            </div>
-            <div data-aos='fade-left' data-aos-duration='1000'>
-                <img src={{ asset('assets/images/about/certificate-2.png') }} alt="" />
-            </div>
-            <div data-aos='fade-left' data-aos-duration='1200'>
-                <img src={{ asset('assets/images/about/certificate-3.png') }} alt="" />
-            </div>
-        </div>
+            class='hidden w-full md:flex gap-4 max-w-7xl mx-auto px-4 my-20 overflow-x-auto'>
+            @foreach ($licenses as $index => $license)
+                <div class="flex-shrink-0 my-5">
+                    <img src="{{ $license->image }}"
+                        alt="Certificate {{ $index + 1 }}" class="w-full h-[20rem] lg:h-[25rem] xl:h-[26rem] object-contain object-center" />
+                </div>
+        @endforeach
+    </div>
+
         <div id='registration_docs' class='md:hidden swiper-certificate'>
             <div class="swiper certificateSwiper" style="width: 80%; height: 300px; margin: auto;">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="flex justify-center items-center h-full">
-                            <img src={{ asset('assets/images/about/certificate-1.png') }} alt=""
-                                class="h-full object-contain" />
+                    @foreach ($licenses as $index => $item)
+                        <div class="swiper-slide">
+                            <div class="flex justify-center items-center h-full">
+                                <img src={{ $item->image }} alt=""
+                                    class="h-full object-contain" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="flex justify-center items-center h-full">
-                            <img src={{ asset('assets/images/about/certificate-2.png') }} alt=""
-                                class="h-full object-contain" />
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="flex justify-center items-center h-full">
-                            <img src={{ asset('assets/images/about/certificate-3.png') }} alt=""
-                                class="h-full object-contain" />
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -734,8 +722,7 @@
             {{-- Awards & Accreditations labtop --}}
             <div id='certificate' class='hidden md:grid grid-cols-5 gap-10 overflow-hidden py-20'>
                 <div data-aos='fade-up' data-aos-duration='1200'>
-                    <div
-                        class="flex flex-col items-center text-center w-full">
+                    <div class="flex flex-col items-center text-center w-full">
                         <img src={{ asset('assets/images/about/awards-1.png') }} alt=''
                             class="w-full h-[150px] lg:h-[200px] xl:h-[250px] 2xl:h-[300px] object-contain" />
                         <p
@@ -745,8 +732,7 @@
                     </div>
                 </div>
                 <div data-aos='fade-up' data-aos-duration='1200'>
-                    <div
-                        class="flex flex-col items-center text-center w-full">
+                    <div class="flex flex-col items-center text-center w-full">
                         <img src={{ asset('assets/images/about/awards-2.png') }} alt=''
                             class="w-full h-[150px] lg:h-[200px] xl:h-[250px] 2xl:h-[300px] object-contain" />
                         <p
@@ -756,8 +742,7 @@
                     </div>
                 </div>
                 <div data-aos='fade-up' data-aos-duration='1200'>
-                    <div
-                        class="flex flex-col items-center text-center w-full">
+                    <div class="flex flex-col items-center text-center w-full">
                         <img src={{ asset('assets/images/about/awards-3.png') }} alt=''
                             class="w-full h-[150px] lg:h-[200px] xl:h-[250px] 2xl:h-[300px] object-contain" />
                         <p
@@ -767,8 +752,7 @@
                     </div>
                 </div>
                 <div data-aos='fade-up' data-aos-duration='1200'>
-                    <div
-                        class="flex flex-col items-center text-center w-full">
+                    <div class="flex flex-col items-center text-center w-full">
                         <img src={{ asset('assets/images/about/awards-4.png') }} alt=''
                             class="w-full h-[150px] lg:h-[200px] xl:h-[250px] 2xl:h-[300px] object-contain" />
                         <p
@@ -778,8 +762,7 @@
                     </div>
                 </div>
                 <div data-aos='fade-up' data-aos-duration='1200'>
-                    <div
-                        class="flex flex-col items-center text-center w-full">
+                    <div class="flex flex-col items-center text-center w-full">
                         <img src={{ asset('assets/images/about/awards-5.png') }} alt=''
                             class="w-full h-[150px] lg:h-[200px] xl:h-[250px] 2xl:h-[300px] object-contain" />
                         <p

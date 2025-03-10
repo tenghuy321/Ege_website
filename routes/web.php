@@ -1,22 +1,23 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\OurHistoryController;
-use App\Http\Controllers\Admin\ManagementController;
-use App\Http\Controllers\Admin\OurProductController;
-use App\Http\Controllers\Admin\OurProjectController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\EventController;
-use App\Http\Controllers\getQuoteController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\ScheduleConsultationController;
 use App\Http\Controllers\ServiceController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\getQuoteController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\LicenseController;
+use App\Http\Controllers\Admin\ManagementController;
+use App\Http\Controllers\Admin\OurHistoryController;
+use App\Http\Controllers\Admin\OurProductController;
+use App\Http\Controllers\Admin\OurProjectController;
+use App\Http\Controllers\ScheduleConsultationController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
@@ -61,6 +62,10 @@ Route::middleware('auth')->group(function () {
     // management
     Route::resource('management', ManagementController::class)->except(['destroy', 'show']);
     Route::get('management/delete/{id}', [ManagementController::class , 'delete'])->name('management.delete');
+
+    // license
+    Route::resource('license', LicenseController::class)->except(['destroy', 'show']);
+    Route::get('license/delete/{id}', [LicenseController::class , 'delete'])->name('license.delete');
 
 });
 
