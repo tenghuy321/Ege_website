@@ -9,7 +9,7 @@
                     <div class="bg-[#415464] w-full px-8 lg:px-10 py-4" data-aos='fade-left' data-aos-duration='1500'>
                         <div data-aos='fade-left' data-aos-duration='2000'>
                             <p class="text-[20px] xl:text-[30px] font-[700] text-[#ffffff]">Welcome to</p>
-                            <p class="text-[#ffffff] text-[20px] lg:text-[40px] xl:text-[60px] font-[700] leading-none">
+                            <p class="text-[#ffffff] text-[20px] lg:text-[40px] xl:text-[55px] font-[700] leading-none">
                                 EGE Cambodia Energy </p>
                             <p class="text-[#ffffff] text-[40px] xl:text-[60px] font-[700] leading-none">Solutions.</p>
                         </div>
