@@ -691,8 +691,8 @@
                     <img src="{{ $license->image }}"
                         alt="Certificate {{ $index + 1 }}" class="w-full h-[20rem] lg:h-[25rem] xl:h-[26rem] object-contain object-center" />
                 </div>
-        @endforeach
-    </div>
+            @endforeach
+        </div>
 
         <div id='registration_docs' class='md:hidden swiper-certificate'>
             <div class="swiper certificateSwiper" style="width: 80%; height: 300px; margin: auto;">

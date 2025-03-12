@@ -65,6 +65,7 @@ Route::middleware('auth')->group(function () {
 
     // license
     Route::resource('license', LicenseController::class)->except(['destroy', 'show']);
+    Route::post('/licenses/reorder', [LicenseController::class, 'reorder'])->name('license.reorder');
     Route::get('license/delete/{id}', [LicenseController::class , 'delete'])->name('license.delete');
 
 });

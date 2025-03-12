@@ -11,8 +11,8 @@ class LicenseController extends Controller
 {
     public function index()
     {
-       $data['licenses'] = License::get();
-       return view('admin.licenses.index', $data);
+        $data['licenses'] = License::orderBy('order')->get();
+        return view('admin.licenses.index', $data);
     }
 
     public function create()
@@ -28,11 +28,14 @@ class LicenseController extends Controller
 
         $data = $request->except(['image', '_token']);
 
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('uploads/licenses', 'custom');
         }
 
-        $i = License::insert($data);
+        // Set order as the next highest order
+        $data['order'] = License::max('order') + 1;
+
+        $i = License::create($data);
 
         if ($i) {
             return redirect()->route('license.index')->with('success', 'License has been saved successfully!');
@@ -45,22 +48,22 @@ class LicenseController extends Controller
 
     public function edit(string $id)
     {
-        $license = License::find($id);
+        $license = License::findOrFail($id);
         return view('admin.licenses.edit', compact('license'));
     }
 
     public function update(Request $request, string $id)
     {
-        $license = License::find($id);
-        $data = $request->except(['image', '_token', 'method']);
+        $license = License::findOrFail($id);
+        $data = $request->except(['image', '_token', '_method']);
+
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('uploads/ourhistory', 'custom');
+            $data['image'] = $request->file('image')->store('uploads/licenses', 'custom');
 
             if ($license->image && Storage::disk('custom')->exists($license->image)) {
                 Storage::disk('custom')->delete($license->image);
             }
         }
-
 
         $i = $license->update($data);
 
@@ -71,19 +74,29 @@ class LicenseController extends Controller
         }
     }
 
+    public function reorder(Request $request)
+    {
+        $newOrder = $request->newOrder;
+
+        foreach ($newOrder as $item) {
+            License::where('id', $item['id'])->update(['order' => $item['order']]);
+        }
+
+        return response()->json(['success' => true]);
+    }
+
+
+
     public function delete(string $id)
     {
-        $license = License::find($id);
-        $i = License::where('id', $id)->delete();
+        $license = License::findOrFail($id);
 
-        if ($license->image) {
-            @unlink($license->image);
+        if ($license->image && Storage::disk('custom')->exists($license->image)) {
+            Storage::disk('custom')->delete($license->image);
         }
 
-        if ($i) {
-            return redirect()->route('license.index');
-        } else {
-            return redirect()->back();
-        }
+        $license->delete();
+
+        return redirect()->route('license.index')->with('success', 'License has been deleted!');
     }
 }

@@ -12,4 +12,12 @@ class License extends Model
     protected $fillable = [
         'image',
     ];
+
+    protected static function boot(){
+        parent::boot();
+
+        static::creating(function($license){
+            $license->order = License::max('order') + 1;
+        });
+    }
 }

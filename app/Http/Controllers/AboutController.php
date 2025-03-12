@@ -13,7 +13,7 @@ class AboutController extends Controller
 
         $data['ourhistories'] = OurHistory::get();
         $data['managements'] = Management::get();
-        $data['licenses'] = License::get();
+        $data['licenses'] = License::orderBy('order')->get();
         return view('about' ,$data);
     }
 }
