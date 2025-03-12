@@ -687,7 +687,7 @@
         <div id='registration_docs'
             class='hidden w-full md:flex gap-4 max-w-7xl mx-auto px-4 my-20 overflow-x-auto'>
             @foreach ($licenses as $index => $license)
-                <div class="flex-shrink-0 my-5">
+                <div class="flex-shrink-0 my-5" data-aos='fade-up' data-aos-duration='1200'>
                     <img src="{{ $license->image }}"
                         alt="Certificate {{ $index + 1 }}" class="w-full h-[20rem] lg:h-[25rem] xl:h-[26rem] object-contain object-center" />
                 </div>
@@ -698,7 +698,7 @@
             <div class="swiper certificateSwiper" style="width: 80%; height: 300px; margin: auto;">
                 <div class="swiper-wrapper">
                     @foreach ($licenses as $index => $item)
-                        <div class="swiper-slide">
+                        <div class="swiper-slide" >
                             <div class="flex justify-center items-center h-full">
                                 <img src={{ $item->image }} alt=""
                                     class="h-full object-contain" />
@@ -721,106 +721,34 @@
             </div>
             {{-- Awards & Accreditations labtop --}}
             <div id='certificate' class='hidden md:grid grid-cols-5 gap-10 overflow-hidden py-20'>
-                <div data-aos='fade-up' data-aos-duration='1200'>
-                    <div class="flex flex-col items-center text-center w-full">
-                        <img src={{ asset('assets/images/about/awards-1.png') }} alt=''
-                            class="w-full h-[150px] lg:h-[200px] xl:h-[250px] 2xl:h-[300px] object-contain" />
-                        <p
-                            class="max-w-[200px] h-[120px] pt-7 text-[11px] lg:text-[13px] xl:text-[15px] text-[#415464] font-[500]">
-                            2023 OUTSTANDING ASEAN WOMAN ENTREPRENEUR AWARD
-                        </p>
+                @foreach ($awards as $index => $item)
+                    <div data-aos='fade-up' data-aos-duration='1200'>
+                        <div class="flex flex-col items-center text-center w-full">
+                            <img src={{ $item->image }} alt=''
+                                class="w-full h-[150px] lg:h-[200px] xl:h-[250px] 2xl:h-[300px] object-contain" />
+                            <p
+                                class="max-w-[200px] h-[120px] pt-7 text-[11px] lg:text-[13px] xl:text-[15px] text-[#415464] uppercase font-[500]">
+                                {{ $item->title }}
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div data-aos='fade-up' data-aos-duration='1200'>
-                    <div class="flex flex-col items-center text-center w-full">
-                        <img src={{ asset('assets/images/about/awards-2.png') }} alt=''
-                            class="w-full h-[150px] lg:h-[200px] xl:h-[250px] 2xl:h-[300px] object-contain" />
-                        <p
-                            class="max-w-[200px] h-[120px] pt-7 text-[11px] lg:text-[13px] xl:text-[15px] text-[#415464] font-[500]">
-                            2024 OUTSTANDING ASEAN WOMAN ENTREPRENEUR AWARD
-                        </p>
-                    </div>
-                </div>
-                <div data-aos='fade-up' data-aos-duration='1200'>
-                    <div class="flex flex-col items-center text-center w-full">
-                        <img src={{ asset('assets/images/about/awards-3.png') }} alt=''
-                            class="w-full h-[150px] lg:h-[200px] xl:h-[250px] 2xl:h-[300px] object-contain" />
-                        <p
-                            class="max-w-[200px] h-[120px] pt-7 text-[11px] lg:text-[13px] xl:text-[15px] text-[#415464] font-[500]">
-                            GREAT ASEAN CSR ENTREPRENEUR AWARD 2024
-                        </p>
-                    </div>
-                </div>
-                <div data-aos='fade-up' data-aos-duration='1200'>
-                    <div class="flex flex-col items-center text-center w-full">
-                        <img src={{ asset('assets/images/about/awards-4.png') }} alt=''
-                            class="w-full h-[150px] lg:h-[200px] xl:h-[250px] 2xl:h-[300px] object-contain" />
-                        <p
-                            class="max-w-[200px] h-[120px] pt-7 text-[11px] lg:text-[13px] xl:text-[15px] text-[#415464] font-[500]">
-                            GREAT ASEAN CSR ENTREPRENEUR AWARD 2024
-                        </p>
-                    </div>
-                </div>
-                <div data-aos='fade-up' data-aos-duration='1200'>
-                    <div class="flex flex-col items-center text-center w-full">
-                        <img src={{ asset('assets/images/about/awards-5.png') }} alt=''
-                            class="w-full h-[150px] lg:h-[200px] xl:h-[250px] 2xl:h-[300px] object-contain" />
-                        <p
-                            class="max-w-[200px] h-[120px] pt-7 text-[11px] lg:text-[13px] xl:text-[15px] text-[#415464] font-[500]">
-                            CERTIFICATE OF AUTHORIZATION
-                        </p>
-                    </div>
-                </div>
+                @endforeach
             </div>
             {{-- Awards & Accreditations mobile --}}
             <div id='certificate' class='md:hidden swiper-awards py-20'>
                 <div class="swiper awardsSwiper" style="width: 80%; height: 300px; margin: auto;">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="flex flex-col items-center text-center w-full h-[150px]">
-                                <img src={{ asset('assets/images/about/awards-1.png') }} alt=''
-                                    class="w-full h-full object-contain" />
-                                <p class="max-w-[200px] h-[100px] pt-7 text-[11px] text-[#415464] font-[500]">
-                                    2023 OUTSTANDING ASEAN WOMAN ENTREPRENEUR AWARD
-                                </p>
+                        @foreach ($awards as $index => $item)
+                            <div class="swiper-slide">
+                                <div class="flex flex-col items-center text-center w-full h-[150px]">
+                                    <img src={{ $item->image }} alt=''
+                                        class="w-full h-full object-contain" />
+                                    <p class="max-w-[200px] h-[100px] pt-7 text-[11px] text-[#415464] font-[500] uppercase">
+                                        {{ $item->title }}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col items-center text-center w-full h-[150px]">
-                                <img src={{ asset('assets/images/about/awards-2.png') }} alt=''
-                                    class="w-full h-full object-contain" />
-                                <p class="max-w-[200px] h-[100px] pt-7 text-[11px] text-[#415464] font-[500]">
-                                    2024 OUTSTANDING ASEAN WOMAN ENTREPRENEUR AWARD
-                                </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col items-center text-center w-full h-[150px]">
-                                <img src={{ asset('assets/images/about/awards-3.png') }} alt=''
-                                    class="w-full h-full object-contain" />
-                                <p class="max-w-[200px] h-[100px] pt-7 text-[11px] text-[#415464] font-[500]">
-                                    GREAT ASEAN CSR ENTREPRENEUR AWARD 2024
-                                </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col items-center text-center w-full h-[150px]">
-                                <img src={{ asset('assets/images/about/awards-4.png') }} alt=''
-                                    class="w-full h-full object-contain" />
-                                <p class="max-w-[200px] h-[100px] pt-7 text-[11px] text-[#415464] font-[500]">
-                                    GREAT ASEAN CSR ENTREPRENEUR AWARD 2024
-                                </p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col items-center text-center w-full h-[150px]">
-                                <img src={{ asset('assets/images/about/awards-5.png') }} alt=''
-                                    class="w-full h-full object-contain" />
-                                <p class="max-w-[200px] h-[100px] pt-7 text-[11px] text-[#415464] font-[500]">
-                                    CERTIFICATE OF AUTHORIZATION
-                                </p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
 
                     <div class="swiper-pagination"></div>

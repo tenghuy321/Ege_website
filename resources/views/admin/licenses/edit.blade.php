@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6 my-2">
-        <h2 class="text-2xl font-bold">Create License</h2>
+        <h2 class="text-2xl font-bold">Edit Licenses</h2>
         <form action="{{ route('license.update', $license->id) }}" method="POST" enctype="multipart/form-data" class="space-y-4">
             @csrf
             @component('admin.components.alert')
@@ -49,7 +49,7 @@
             if (file) {
                 const imgLink = URL.createObjectURL(file);
                 imagePreview.style.backgroundImage = `url(${imgLink})`;
-                imagePreview.style.backgroundSize = "cover";
+                imagePreview.style.backgroundSize = "contain";
                 imagePreview.style.backgroundPosition = "center";
                 imagePreview.innerHTML = ""; // Clear the default content inside preview
             }
@@ -72,7 +72,7 @@
             if (file) {
                 const imgLink = URL.createObjectURL(file);
                 imagePreview.style.backgroundImage = `url(${imgLink})`;
-                imagePreview.style.backgroundSize = "cover";
+                imagePreview.style.backgroundSize = "contain";
                 imagePreview.style.backgroundPosition = "center";
                 imagePreview.innerHTML = ""; // Clear the default content inside preview
                 imageFile.files = event.dataTransfer.files; // Attach the dropped file to input

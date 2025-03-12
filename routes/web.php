@@ -12,6 +12,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\getQuoteController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AwardController;
 use App\Http\Controllers\Admin\LicenseController;
 use App\Http\Controllers\Admin\ManagementController;
 use App\Http\Controllers\Admin\OurHistoryController;
@@ -68,6 +69,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/licenses/reorder', [LicenseController::class, 'reorder'])->name('license.reorder');
     Route::get('license/delete/{id}', [LicenseController::class , 'delete'])->name('license.delete');
 
+    // awards
+    Route::resource('award', AwardController::class)->except(['show','destroy']);
+    Route::post('/award/reorder', [AwardController::class ,'reorder'])->name('award.reorder');
+    Route::get('award/delete/{id}', [AwardController::class ,'delete'])->name('award.delete');
 });
 
 require __DIR__.'/auth.php';

@@ -102,6 +102,11 @@
                 class="flex items-center opacity-75 hover:opacity-100 text-[14px] text-[#415464] py-4 pl-6 nav-item {{ Request::is('license') ? 'active-nav-link' : '' }}">
                 License
             </a>
+
+            <a href="{{ url('award') }}"
+                class="flex items-center opacity-75 hover:opacity-100 text-[14px] text-[#415464] py-4 pl-6 nav-item {{ Request::is('award') ? 'active-nav-link' : '' }}">
+                Award
+            </a>
         </nav>
     </aside>
 
@@ -184,6 +189,14 @@
                 <a href="{{ url('project') }}"
                     class="flex items-center text-[14px] text-[#415464] py-2 pl-4 rounded-md nav-item {{ Request::is('project') ? 'active-nav-link' : '' }}">
                     Our Projects
+                </a>
+                <a href="{{ url('license') }}"
+                    class="flex items-center text-[14px] text-[#415464] py-2 pl-4 rounded-md nav-item {{ Request::is('license') ? 'active-nav-link' : '' }}">
+                    License
+                </a>
+                <a href="{{ url('award') }}"
+                    class="flex items-center text-[14px] text-[#415464] py-2 pl-4 rounded-md nav-item {{ Request::is('award') ? 'active-nav-link' : '' }}">
+                    Award
                 </a>
                 <div x-data="{ isOpen: false }" class="relative flex justify-end">
                     <!-- Settings Dropdown -->

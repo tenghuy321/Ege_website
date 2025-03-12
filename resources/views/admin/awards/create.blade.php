@@ -1,10 +1,17 @@
 <x-app-layout>
     <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6 my-2">
-        <h2 class="text-2xl font-bold">Create Licenses</h2>
-        <form action="{{ route('license.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
+        <h2 class="text-2xl font-bold">Create Award</h2>
+        <form action="{{ route('award.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
             @csrf
             @component('admin.components.alert')
             @endcomponent
+
+            <div>
+                <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                <input value="{{ old('title') }}" type="text" name="title" id="title"
+                    class="mt-1 block w-full p-2 border rounded-md focus:ring-green-500 focus:border-green-500 text-green-900 text-sm" placeholder="Your Title">
+                <x-input-error class="mt-2" :messages="$errors->get('title')" />
+            </div>
 
 
             <!-- Dropzone for Image -->
@@ -28,7 +35,7 @@
                 <x-input-error class="mt-2" :messages="$errors->get('image')" />
             </div>
             <div class="flex justify-between">
-                <a href="{{ route('license.index') }}"
+                <a href="{{ route('award.index') }}"
                     class="border border-[#A4CA62] hover:!bg-[#A4CA62] hover:!text-[#ffffff] px-4 py-1 md:px-6 rounded-[5px] text-[#A4CA62]">
                     Back
                 </a>
